@@ -66,7 +66,8 @@ class CategoryResource extends Resource
                 // Tambahkan filter jika diperlukan
             ])
             ->actions([
-                Tables\Actions\EditAction::make(), // Aksi Edit
+                Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(), // Aksi Edit
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(), // Aksi Hapus Banyak

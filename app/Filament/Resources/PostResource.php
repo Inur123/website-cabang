@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Filament\Resources;
-
+use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
 use App\Filament\Resources\PostResource\Pages;
 use App\Models\Post;
 use Filament\Forms;
@@ -31,9 +31,10 @@ class PostResource extends Resource
                     Forms\Components\TextInput::make('slug')
                     ->required()
                     ->disabled(),
-                    Forms\Components\RichEditor::make('content')
-                    ->required()  // Make it required
-                    ->toolbarButtons(['bold', 'italic', 'underline', 'strike', 'orderedList', 'unorderedList', 'link']), // Customize toolbar
+
+                    TinyEditor::make('content'),
+
+
                 Forms\Components\FileUpload::make('thumbnail')
                     ->image() // Specify the field type as an image
                     ->disk('public') // Use the 'public' disk
@@ -74,6 +75,7 @@ class PostResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
