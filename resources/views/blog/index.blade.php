@@ -11,7 +11,7 @@
 <section class="ji gp uq">
     <div class="bb ye ki xn vq jb jo">
         <div class="wc qf pn xo zf iq">
-            @foreach ($posts as $post)
+            @foreach ($posts->sortByDesc('published_at') as $post)
                 <div class="animate_top sg vk rm xm">
                     <div class="c rc i z-1 pg">
                         <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="Blog" style="border-top-left-radius: 10px; border-top-right-radius: 10px;" />

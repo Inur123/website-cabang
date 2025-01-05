@@ -31,15 +31,28 @@ public function index()
 public function show($slug)
 {
     $categories = Category::all();
+
     // Ambil postingan berdasarkan slug
     $post = Post::where('slug', $slug)->where('is_published', 1)->firstOrFail();
 
+    // Ambil postingan terkait berdasarkan kategori
     $relatedPosts = Post::where('category_id', $post->category_id)  // Assuming category_id is a foreign key in the posts table
-    ->where('is_published', 1)
-    ->where('slug', '!=', $slug)  // Exclude the current post
-    ->limit(3)  // Limit the number of related posts
-    ->get();
+        ->where('is_published', 1)
+        ->where('slug', '!=', $slug)  // Exclude the current post
+        ->limit(3)  // Limit the number of related posts
+        ->get();
 
-    return view('blog.detail', compact('post','categories','relatedPosts'));
+    // Increment the visit count for the current post
+    $post->increment('visits');
+
+    // Fetch the 5 most popular posts (based on the highest number of visits)
+    $popularPosts = Post::where('is_published', 1)
+        ->orderBy('visits', 'desc')  // Order by visits
+        ->limit(5)  // Limit to the top 5 posts
+        ->get();
+
+    return view('blog.detail', compact('post', 'categories', 'relatedPosts', 'popularPosts'));
 }
+
+
 }

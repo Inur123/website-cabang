@@ -4,30 +4,45 @@
 @section('header')
     @include('layouts.header')
 @endsection
+<style>
+    .slideshow-image {
+  top: 0;
+  left: 0;
+}
+</style>
 <section class="gj do ir hj sp jr i pg">
     <!-- Hero Images -->
     <div class="xc fn zd/2 2xl:ud-w-187.5 bd 2xl:ud-h-171.5 h q r">
       <img
-        src="images/shape-01.svg"
+        src="{{ asset('template-blog/images/shape-01.svg') }}"
         alt="shape"
         class="xc 2xl:ud-block h t -ud-left-[10%] ua"
       />
       <img
-        src="images/shape-02.svg"
+        src="{{ asset('template-blog/images/shape-02.svg') }}"
         alt="shape"
         class="xc 2xl:ud-block h u p va"
       />
       <img
-        src="images/shape-03.svg"
+        src="{{ asset('template-blog/images/shape-03.svg') }}"
         alt="shape"
         class="xc 2xl:ud-block h v w va"
       />
-      <img
-        src="{{ asset('template-blog/images/1.png') }}"
-        alt="shape"
-        class="h q r"
-        style="width: 100%; height: 600px; border-bottom-left-radius: 15px"
-      />
+      <div style="position: relative; width: 100%; height: 600px; overflow: hidden; border-bottom-left-radius: 15px;">
+        <img
+            src="{{ asset('template-blog/images/1.png') }}"
+            alt="shape"
+            class="slideshow-image"
+            style="width: 100%; height: 100%; position: absolute; transition: opacity 1s ease-in-out; opacity: 1;"
+          />
+        <img
+            src="{{ asset('template-blog/images/2.png') }}"
+            alt="shape"
+            class="slideshow-image"
+            style="width: 100%; height: 100%; position: absolute; transition: opacity 1s ease-in-out; opacity: 0;"
+          />
+    </div>
+
     </div>
 
     <!-- Hero Content -->
@@ -69,7 +84,7 @@
             <img src="{{ asset('template-blog/images/icon-01.svg') }}" alt="Icon" />
           </div>
           <div>
-            <h4 class="ek yj go kk wm xb">200</h4>
+            <h4 class="ek yj go kk wm xb count-number" data-target="200">0</h4>
             <p>Total Anggota</p>
           </div>
         </div>
@@ -80,7 +95,7 @@
             <img src="{{ asset('template-blog/images/icon-03.svg') }}" alt="Icon" />
           </div>
           <div>
-            <h4 class="ek yj go kk wm xb">18</h4>
+            <h4 class="ek yj go kk wm xb count-number" data-target="18">0</h4>
             <p>Pimpinan Anak Cabang</p>
           </div>
         </div>
@@ -91,7 +106,7 @@
             <img src="{{ asset('template-blog/images/icon-02.svg') }}" alt="Icon" />
           </div>
           <div>
-            <h4 class="ek yj go kk wm xb">10</h4>
+            <h4 class="ek yj go kk wm xb count-number" data-target="10">0</h4>
             <p>Pimpinan Komisariat</p>
           </div>
         </div>
@@ -1330,3 +1345,48 @@
   @section('footer')
   @include('layouts.footer')
 @endsection
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const images = document.querySelectorAll('.slideshow-image');
+      let currentImageIndex = 0;
+
+      setInterval(() => {
+        // Set current image to invisible
+        images[currentImageIndex].style.opacity = 0;
+
+        // Update to next image index
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+
+        // Set next image to visible
+        images[currentImageIndex].style.opacity = 1;
+      }, 3000); // Change every 3 seconds
+    });
+  </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const counters = document.querySelectorAll('.count-number');
+
+        counters.forEach(counter => {
+            const target = +counter.getAttribute('data-target'); // Ambil angka target
+            const duration = 2000; // Durasi animasi (ms)
+            const increment = Math.ceil(target / (duration / 50)); // Nilai kenaikan per 50ms
+
+            let count = 0;
+
+            const updateCounter = () => {
+                count += increment;
+
+                if (count >= target) {
+                    counter.textContent = target; // Tampilkan angka target jika selesai
+                } else {
+                    counter.textContent = count;
+                    setTimeout(updateCounter, 50); // Perbarui setiap 50ms
+                }
+            };
+
+            updateCounter();
+        });
+    });
+</script>
+

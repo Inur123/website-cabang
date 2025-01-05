@@ -27,17 +27,21 @@
         <div class="vd wo/4 sd qo f ho oo wf yf" :class="{ 'd hh rm sr td ud qg ug jc yh': navigationOpen }">
             <nav>
                 <ul class="tc _o sf yo cg ep">
-                    <li><a href="/" class="xl" :class="{ 'mk': page === 'home' }">Home</a></li>
-                    <li><a href="/blog" class="xl" :class="{ 'mk': page === 'blog' }">Blog</a></li>
-                    <li><a href="index.html#features" class="xl">Features</a></li>
+                    <li>
+                        <a href="/" class="xl {{ Request::is('/') ? 'mk' : '' }}">Home</a>
+                    </li>
+                    <li>
+                        <a href="/blog" class="xl {{ Request::is('blog*') ? 'mk' : '' }}">Blog</a>
+                    </li>
+                    <li>
+                        <a href="index.html#features" class="xl">Features</a>
+                    </li>
                     <li class="c i" x-data="{ dropdown: false }">
                         <a href="#" class="xl tc wf yf bg" @click.prevent="dropdown = !dropdown"
                             :class="{
-                                'mk': page === 'blog-grid' || page === 'blog-single' || page === 'signin' ||
-                                    page === 'signup' || page === '404'
+                                'mk': dropdown
                             }">
                             Pages
-
                             <svg :class="{ 'wh': dropdown }" class="th mm we fd pf" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 512 512">
                                 <path
@@ -47,22 +51,20 @@
 
                         <!-- Dropdown Start -->
                         <ul class="a" :class="{ 'tc': dropdown }">
-                            <li><a href="blog-grid.html" class="xl" :class="{ 'mk': page === 'blog-grid' }">Blog
-                                    Grid</a></li>
-                            <li><a href="blog-single.html" class="xl"
-                                    :class="{ 'mk': page === 'blog-single' }">Blog Single</a></li>
-                            <li><a href="signin.html" class="xl" :class="{ 'mk': page === 'signin' }">Sign
-                                    In</a></li>
-                            <li><a href="signup.html" class="xl" :class="{ 'mk': page === 'signup' }">Sign
-                                    Up</a></li>
-                            <li><a href="404.html" class="xl" :class="{ 'mk': page === '404' }">404</a>
-                            </li>
+                            <li><a href="blog-grid.html" class="xl">Blog Grid</a></li>
+                            <li><a href="blog-single.html" class="xl">Blog Single</a></li>
+                            <li><a href="signin.html" class="xl">Sign In</a></li>
+                            <li><a href="signup.html" class="xl">Sign Up</a></li>
+                            <li><a href="404.html" class="xl">404</a></li>
                         </ul>
                         <!-- Dropdown End -->
                     </li>
-                    <li><a href="index.html#support" class="xl">Support</a></li>
+                    <li>
+                        <a href="index.html#support" class="xl">Support</a>
+                    </li>
                 </ul>
             </nav>
+
 
             <div class="tc wf ig pb no">
                 <div class="pc h io pa ra" :class="navigationOpen ? '!-ud-visible' : 'd'">

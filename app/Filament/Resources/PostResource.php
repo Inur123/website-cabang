@@ -28,24 +28,24 @@ class PostResource extends Resource
                     ->maxLength(255)
                     ->reactive()
                     ->afterStateUpdated(fn (callable $set, $state) => $set('slug', Str::slug($state))), // Automatically generate slug
-                Forms\Components\Textarea::make('content')
-                    ->required(),
-                Forms\Components\Select::make('category_id')
-                    ->relationship('category', 'name')
-                    ->required(),
-                Forms\Components\TextInput::make('slug')
+                    Forms\Components\TextInput::make('slug')
                     ->required()
                     ->disabled(),
-
+                    Forms\Components\RichEditor::make('content')
+                    ->required()  // Make it required
+                    ->toolbarButtons(['bold', 'italic', 'underline', 'strike', 'orderedList', 'unorderedList', 'link']), // Customize toolbar
                 Forms\Components\FileUpload::make('thumbnail')
                     ->image() // Specify the field type as an image
                     ->disk('public') // Use the 'public' disk
                     ->directory('thumbnails') // Store images in the 'thumbnails' folder
                     ->visibility('public') // Make the uploaded file publicly accessible
-                    ->nullable(), // Allow null values for the thumbnail field
-                Forms\Components\Toggle::make('is_published')
-                    ->label('Published'),
+                    ->nullable(),
+                    Forms\Components\Select::make('category_id')
+                    ->relationship('category', 'name')
+                    ->required(),// Allow null values for the thumbnail field
                 Forms\Components\DateTimePicker::make('published_at'),
+                Forms\Components\Toggle::make('is_published')
+                ->label('Published'),
                 Forms\Components\Hidden::make('user_id')
                     ->default(auth()->id()),
             ]);

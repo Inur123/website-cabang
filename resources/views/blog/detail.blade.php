@@ -4,6 +4,7 @@
 @section('header')
     @include('layouts.header')
 @endsection
+
 <section class="gj qp gr hj rp hr">
     <div class="bb ze ki xn 2xl:ud-px-0">
         <div class="tc sf yo zf kq">
@@ -81,20 +82,34 @@
                 </div>
 
                 <div class="animate_top">
-                    <h4 class="tj kk wm qb">Related Posts</h4>
+                    <h4 class="tj kk wm qb">Most Popular Post</h4>
 
                     <div>
-                        @foreach($relatedPosts as $relatedPost)
+                        @foreach ($popularPosts as $popularPost)
                         <div class="tc fg 2xl:ud-gap-6 qb">
-                            <img src="{{ asset('storage/' . $relatedPost->thumbnail) }}" alt="Blog" />
+                            <img src="{{ asset('storage/' . $popularPost->thumbnail) }}" alt="Blog" style="width: 90px; height:78px; border-radius: 10px" />
                             <h5 class="wj kk wm xl bn ml il">
-                                <a href="{{ route('blog.show', $relatedPost->slug) }}">{{ $relatedPost->title }}</a>
+                                <a href="{{ route('blog.show', $popularPost->slug) }}">
+                                    {{ \Illuminate\Support\Str::limit($popularPost->title, 45, '...') }}
+                                </a>
                             </h5>
                         </div>
-                    @endforeach
+                        @endforeach
                     </div>
                 </div>
-            </div>
+                {{-- <div class="animate_top">
+                    <h4 class="tj kk wm qb">Related Posts</h4>
+                    <div>
+                        @if($popularPost)
+                      <div class="tc fg 2xl:ud-gap-6 qb">
+                        <img src="images/blog-small-01.png" alt="Blog" />
+                        <h5 class="wj kk wm xl bn ml il">
+                          <a href="#">Free advertising for your online business</a>
+                        </h5>
+                      </div>
+                  </div>
+                  @endif
+                </div> --}}
         </div>
     </div>
 </section>
