@@ -69,6 +69,7 @@ class PostResource extends Resource
                     ->getStateUsing(fn ($record) => $record->is_published == 1 ? 'Publish' : 'No Publish')
                     ->color(fn ($record) => $record->is_published == 1 ? 'success' : 'danger'),
                 Tables\Columns\TextColumn::make('published_at')->dateTime(),
+                Tables\Columns\TextColumn::make('visits'),
             ])
             ->filters([
                 //
