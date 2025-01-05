@@ -27,30 +27,38 @@ class PostResource extends Resource
                     ->required()
                     ->maxLength(255)
                     ->reactive()
-                    ->afterStateUpdated(fn (callable $set, $state) => $set('slug', Str::slug($state))), // Automatically generate slug
-                    Forms\Components\TextInput::make('slug')
+                    ->afterStateUpdated(function (callable $set, $state) {
+                        // Automatically set slug when title is changed
+                        $set('slug', Str::slug($state));
+                    }),
+
+                Forms\Components\TextInput::make('slug')
                     ->required()
                     ->disabled(),
 
-                    TinyEditor::make('content'),
-
+                TinyEditor::make('content'),
 
                 Forms\Components\FileUpload::make('thumbnail')
-                    ->image() // Specify the field type as an image
-                    ->disk('public') // Use the 'public' disk
-                    ->directory('thumbnails') // Store images in the 'thumbnails' folder
-                    ->visibility('public') // Make the uploaded file publicly accessible
+                    ->image()
+                    ->disk('public')
+                    ->directory('thumbnails')
+                    ->visibility('public')
                     ->nullable(),
-                    Forms\Components\Select::make('category_id')
+
+                Forms\Components\Select::make('category_id')
                     ->relationship('category', 'name')
-                    ->required(),// Allow null values for the thumbnail field
+                    ->required(),
+
                 Forms\Components\DateTimePicker::make('published_at'),
+
                 Forms\Components\Toggle::make('is_published')
-                ->label('Published'),
+                    ->label('Published'),
+
                 Forms\Components\Hidden::make('user_id')
                     ->default(auth()->id()),
             ]);
     }
+
 
 
 

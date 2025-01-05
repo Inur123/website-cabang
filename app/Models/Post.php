@@ -15,20 +15,25 @@ class Post extends Model
         'title', 'content', 'category_id', 'slug', 'thumbnail', 'is_published', 'published_at', 'user_id'
     ];
 
-    protected static function boot()
+    // Automatically set user_id for new posts
+    protected static function booted()
     {
-        parent::boot();
-
-        // Automatically set user_id for new posts
         static::creating(function ($post) {
             // If user_id is not set, assign the currently authenticated user
             if (!$post->user_id) {
-                $post->user_id = auth(); // Get the ID of the currently authenticated user
+                $post->user_id = auth()->id(); // Get the ID of the currently authenticated user
             }
 
             // If slug is not provided, generate it from the title
             if (!$post->slug) {
                 $post->slug = Str::slug($post->title);
+            }
+        });
+
+        // Automatically update the slug when the title is changed
+        static::saving(function ($post) {
+            if ($post->isDirty('title')) {
+                $post->slug = Str::slug($post->title); // Update the slug when title changes
             }
         });
     }
@@ -50,8 +55,6 @@ class Post extends Model
 
     public function getRouteKeyName()
     {
-        return 'slug';
+        return 'slug'; // Use 'slug' as the route key
     }
-
-
 }
