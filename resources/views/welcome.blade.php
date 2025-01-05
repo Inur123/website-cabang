@@ -1,176 +1,1332 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
+<!-- ===== Header Start ===== -->
 
-        <title>Laravel</title>
+@section('header')
+    @include('layouts.header')
+@endsection
+<section class="gj do ir hj sp jr i pg">
+    <!-- Hero Images -->
+    <div class="xc fn zd/2 2xl:ud-w-187.5 bd 2xl:ud-h-171.5 h q r">
+      <img
+        src="images/shape-01.svg"
+        alt="shape"
+        class="xc 2xl:ud-block h t -ud-left-[10%] ua"
+      />
+      <img
+        src="images/shape-02.svg"
+        alt="shape"
+        class="xc 2xl:ud-block h u p va"
+      />
+      <img
+        src="images/shape-03.svg"
+        alt="shape"
+        class="xc 2xl:ud-block h v w va"
+      />
+      <img
+        src="{{ asset('template-blog/images/1.png') }}"
+        alt="shape"
+        class="h q r"
+        style="width: 100%; height: 600px; border-bottom-left-radius: 15px"
+      />
+    </div>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <!-- Hero Content -->
+    <div class="bb ze ki xn 2xl:ud-px-0">
+      <div class="tc _o">
+        <div class="animate_left jn/2">
+          <h1 class="fk vj zp or kk wm wb">PC IPNU IPPNU MAGETAN</h1>
+          <p class="fq">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+            fringilla magna mauris. Nulla fermentum viverra sem eu rhoncus
+            consequat varius nisi quis, posuere magna.
+          </p>
 
-        <!-- Styles / Scripts -->
-        @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
-            @vite(['resources/css/app.css', 'resources/js/app.js'])
-        @else
-            <style>
-                /* ! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Figtree, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]{display:none}*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }.absolute{position:absolute}.relative{position:relative}.-left-20{left:-5rem}.top-0{top:0px}.-bottom-16{bottom:-4rem}.-left-16{left:-4rem}.-mx-3{margin-left:-0.75rem;margin-right:-0.75rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.flex{display:flex}.grid{display:grid}.hidden{display:none}.aspect-video{aspect-ratio:16 / 9}.size-12{width:3rem;height:3rem}.size-5{width:1.25rem;height:1.25rem}.size-6{width:1.5rem;height:1.5rem}.h-12{height:3rem}.h-40{height:10rem}.h-full{height:100%}.min-h-screen{min-height:100vh}.w-full{width:100%}.w-\[calc\(100\%\+8rem\)\]{width:calc(100% + 8rem)}.w-auto{width:auto}.max-w-\[877px\]{max-width:877px}.max-w-2xl{max-width:42rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.items-stretch{align-items:stretch}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.gap-2{gap:0.5rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.self-center{align-self:center}.overflow-hidden{overflow:hidden}.rounded-\[10px\]{border-radius:10px}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-md{border-radius:0.375rem}.rounded-sm{border-radius:0.125rem}.bg-\[\#FF2D20\]\/10{background-color:rgb(255 45 32 / 0.1)}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity))}.bg-gradient-to-b{background-image:linear-gradient(to bottom, var(--tw-gradient-stops))}.from-transparent{--tw-gradient-from:transparent var(--tw-gradient-from-position);--tw-gradient-to:rgb(0 0 0 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-white{--tw-gradient-to:rgb(255 255 255 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #fff var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-white{--tw-gradient-to:#fff var(--tw-gradient-to-position)}.stroke-\[\#FF2D20\]{stroke:#FF2D20}.object-cover{object-fit:cover}.object-top{object-position:top}.p-6{padding:1.5rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-10{padding-top:2.5rem;padding-bottom:2.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.pt-3{padding-top:0.75rem}.text-center{text-align:center}.font-sans{font-family:Figtree, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-sm\/relaxed{font-size:0.875rem;line-height:1.625}.text-xl{font-size:1.25rem;line-height:1.75rem}.font-semibold{font-weight:600}.text-black{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.shadow-\[0px_14px_34px_0px_rgba\(0\2c 0\2c 0\2c 0\.08\)\]{--tw-shadow:0px 14px 34px 0px rgba(0,0,0,0.08);--tw-shadow-colored:0px 14px 34px 0px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.ring-1{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.ring-transparent{--tw-ring-color:transparent}.ring-white\/\[0\.05\]{--tw-ring-color:rgb(255 255 255 / 0.05)}.drop-shadow-\[0px_4px_34px_rgba\(0\2c 0\2c 0\2c 0\.06\)\]{--tw-drop-shadow:drop-shadow(0px 4px 34px rgba(0,0,0,0.06));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.drop-shadow-\[0px_4px_34px_rgba\(0\2c 0\2c 0\2c 0\.25\)\]{--tw-drop-shadow:drop-shadow(0px 4px 34px rgba(0,0,0,0.25));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.selection\:bg-\[\#FF2D20\] *::selection{--tw-bg-opacity:1;background-color:rgb(255 45 32 / var(--tw-bg-opacity))}.selection\:text-white *::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.selection\:bg-\[\#FF2D20\]::selection{--tw-bg-opacity:1;background-color:rgb(255 45 32 / var(--tw-bg-opacity))}.selection\:text-white::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.hover\:text-black:hover{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity))}.hover\:text-black\/70:hover{color:rgb(0 0 0 / 0.7)}.hover\:ring-black\/20:hover{--tw-ring-color:rgb(0 0 0 / 0.2)}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus-visible\:ring-1:focus-visible{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus-visible\:ring-\[\#FF2D20\]:focus-visible{--tw-ring-opacity:1;--tw-ring-color:rgb(255 45 32 / var(--tw-ring-opacity))}@media (min-width: 640px){.sm\:size-16{width:4rem;height:4rem}.sm\:size-6{width:1.5rem;height:1.5rem}.sm\:pt-5{padding-top:1.25rem}}@media (min-width: 768px){.md\:row-span-3{grid-row:span 3 / span 3}}@media (min-width: 1024px){.lg\:col-start-2{grid-column-start:2}.lg\:h-16{height:4rem}.lg\:max-w-7xl{max-width:80rem}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.lg\:flex-col{flex-direction:column}.lg\:items-end{align-items:flex-end}.lg\:justify-center{justify-content:center}.lg\:gap-8{gap:2rem}.lg\:p-10{padding:2.5rem}.lg\:pb-10{padding-bottom:2.5rem}.lg\:pt-0{padding-top:0px}.lg\:text-\[\#FF2D20\]{--tw-text-opacity:1;color:rgb(255 45 32 / var(--tw-text-opacity))}}@media (prefers-color-scheme: dark){.dark\:block{display:block}.dark\:hidden{display:none}.dark\:bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity))}.dark\:bg-zinc-900{--tw-bg-opacity:1;background-color:rgb(24 24 27 / var(--tw-bg-opacity))}.dark\:via-zinc-900{--tw-gradient-to:rgb(24 24 27 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #18181b var(--tw-gradient-via-position), var(--tw-gradient-to)}.dark\:to-zinc-900{--tw-gradient-to:#18181b var(--tw-gradient-to-position)}.dark\:text-white\/50{color:rgb(255 255 255 / 0.5)}.dark\:text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.dark\:text-white\/70{color:rgb(255 255 255 / 0.7)}.dark\:ring-zinc-800{--tw-ring-opacity:1;--tw-ring-color:rgb(39 39 42 / var(--tw-ring-opacity))}.dark\:hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.dark\:hover\:text-white\/70:hover{color:rgb(255 255 255 / 0.7)}.dark\:hover\:text-white\/80:hover{color:rgb(255 255 255 / 0.8)}.dark\:hover\:ring-zinc-700:hover{--tw-ring-opacity:1;--tw-ring-color:rgb(63 63 70 / var(--tw-ring-opacity))}.dark\:focus-visible\:ring-\[\#FF2D20\]:focus-visible{--tw-ring-opacity:1;--tw-ring-color:rgb(255 45 32 / var(--tw-ring-opacity))}.dark\:focus-visible\:ring-white:focus-visible{--tw-ring-opacity:1;--tw-ring-color:rgb(255 255 255 / var(--tw-ring-opacity))}}
-            </style>
-        @endif
-    </head>
-    <body class="font-sans antialiased dark:bg-black dark:text-white/50">
-        <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
-            <img id="background" class="absolute -left-20 top-0 max-w-[877px]" src="https://laravel.com/assets/img/welcome/background.svg" alt="Laravel background" />
-            <div class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
-                <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
-                    <header class="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3">
-                        <div class="flex lg:justify-center lg:col-start-2">
-                            <svg class="h-12 w-auto text-white lg:h-16 lg:text-[#FF2D20]" viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M61.8548 14.6253C61.8778 14.7102 61.8895 14.7978 61.8897 14.8858V28.5615C61.8898 28.737 61.8434 28.9095 61.7554 29.0614C61.6675 29.2132 61.5409 29.3392 61.3887 29.4265L49.9104 36.0351V49.1337C49.9104 49.4902 49.7209 49.8192 49.4118 49.9987L25.4519 63.7916C25.3971 63.8227 25.3372 63.8427 25.2774 63.8639C25.255 63.8714 25.2338 63.8851 25.2101 63.8913C25.0426 63.9354 24.8666 63.9354 24.6991 63.8913C24.6716 63.8838 24.6467 63.8689 24.6205 63.8589C24.5657 63.8389 24.5084 63.8215 24.456 63.7916L0.501061 49.9987C0.348882 49.9113 0.222437 49.7853 0.134469 49.6334C0.0465019 49.4816 0.000120578 49.3092 0 49.1337L0 8.10652C0 8.01678 0.0124642 7.92953 0.0348998 7.84477C0.0423783 7.8161 0.0598282 7.78993 0.0697995 7.76126C0.0884958 7.70891 0.105946 7.65531 0.133367 7.6067C0.152063 7.5743 0.179485 7.54812 0.20192 7.51821C0.230588 7.47832 0.256763 7.43719 0.290416 7.40229C0.319084 7.37362 0.356476 7.35243 0.388883 7.32751C0.425029 7.29759 0.457436 7.26518 0.498568 7.2415L12.4779 0.345059C12.6296 0.257786 12.8015 0.211853 12.9765 0.211853C13.1515 0.211853 13.3234 0.257786 13.475 0.345059L25.4531 7.2415H25.4556C25.4955 7.26643 25.5292 7.29759 25.5653 7.32626C25.5977 7.35119 25.6339 7.37362 25.6625 7.40104C25.6974 7.43719 25.7224 7.47832 25.7523 7.51821C25.7735 7.54812 25.8021 7.5743 25.8196 7.6067C25.8483 7.65656 25.8645 7.70891 25.8844 7.76126C25.8944 7.78993 25.9118 7.8161 25.9193 7.84602C25.9423 7.93096 25.954 8.01853 25.9542 8.10652V33.7317L35.9355 27.9844V14.8846C35.9355 14.7973 35.948 14.7088 35.9704 14.6253C35.9792 14.5954 35.9954 14.5692 36.0053 14.5405C36.0253 14.4882 36.0427 14.4346 36.0702 14.386C36.0888 14.3536 36.1163 14.3274 36.1375 14.2975C36.1674 14.2576 36.1923 14.2165 36.2272 14.1816C36.2559 14.1529 36.292 14.1317 36.3244 14.1068C36.3618 14.0769 36.3942 14.0445 36.4341 14.0208L48.4147 7.12434C48.5663 7.03694 48.7383 6.99094 48.9133 6.99094C49.0883 6.99094 49.2602 7.03694 49.4118 7.12434L61.3899 14.0208C61.4323 14.0457 61.4647 14.0769 61.5021 14.1055C61.5333 14.1305 61.5694 14.1529 61.5981 14.1803C61.633 14.2165 61.6579 14.2576 61.6878 14.2975C61.7103 14.3274 61.7377 14.3536 61.7551 14.386C61.7838 14.4346 61.8 14.4882 61.8199 14.5405C61.8312 14.5692 61.8474 14.5954 61.8548 14.6253ZM59.893 27.9844V16.6121L55.7013 19.0252L49.9104 22.3593V33.7317L59.8942 27.9844H59.893ZM47.9149 48.5566V37.1768L42.2187 40.4299L25.953 49.7133V61.2003L47.9149 48.5566ZM1.99677 9.83281V48.5566L23.9562 61.199V49.7145L12.4841 43.2219L12.4804 43.2194L12.4754 43.2169C12.4368 43.1945 12.4044 43.1621 12.3682 43.1347C12.3371 43.1097 12.3009 43.0898 12.2735 43.0624L12.271 43.0586C12.2386 43.0275 12.2162 42.9888 12.1887 42.9539C12.1638 42.9203 12.1339 42.8916 12.114 42.8567L12.1127 42.853C12.0903 42.8156 12.0766 42.7707 12.0604 42.7283C12.0442 42.6909 12.023 42.656 12.013 42.6161C12.0005 42.5688 11.998 42.5177 11.9931 42.4691C11.9881 42.4317 11.9781 42.3943 11.9781 42.3569V15.5801L6.18848 12.2446L1.99677 9.83281ZM12.9777 2.36177L2.99764 8.10652L12.9752 13.8513L22.9541 8.10527L12.9752 2.36177H12.9777ZM18.1678 38.2138L23.9574 34.8809V9.83281L19.7657 12.2459L13.9749 15.5801V40.6281L18.1678 38.2138ZM48.9133 9.14105L38.9344 14.8858L48.9133 20.6305L58.8909 14.8846L48.9133 9.14105ZM47.9149 22.3593L42.124 19.0252L37.9323 16.6121V27.9844L43.7219 31.3174L47.9149 33.7317V22.3593ZM24.9533 47.987L39.59 39.631L46.9065 35.4555L36.9352 29.7145L25.4544 36.3242L14.9907 42.3482L24.9533 47.987Z" fill="currentColor"/></svg>
-                        </div>
-                        @if (Route::has('login'))
-                            <nav class="-mx-3 flex flex-1 justify-end">
-                                @auth
-                                    <a
-                                        href="{{ url('/dashboard') }}"
-                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                                    >
-                                        Dashboard
-                                    </a>
-                                @else
-                                    <a
-                                        href="{{ route('login') }}"
-                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                                    >
-                                        Log in
-                                    </a>
+          <div class="tc tf yo zf mb">
+            <a href="#" class="ek jk lk gh gi hi rg ml il vc _d _l"
+              >Get Started Now</a
+            >
 
-                                    @if (Route::has('register'))
-                                        <a
-                                            href="{{ route('register') }}"
-                                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                                        >
-                                            Register
-                                        </a>
-                                    @endif
-                                @endauth
-                            </nav>
-                        @endif
-                    </header>
-
-                    <main class="mt-6">
-                        <div class="grid gap-6 lg:grid-cols-2 lg:gap-8">
-                            <a
-                                href="https://laravel.com/docs"
-                                id="docs-card"
-                                class="flex flex-col items-start gap-6 overflow-hidden rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] md:row-span-3 lg:p-10 lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]"
-                            >
-                                <div id="screenshot-container" class="relative flex w-full flex-1 items-stretch">
-                                    <img
-                                        src="https://laravel.com/assets/img/welcome/docs-light.svg"
-                                        alt="Laravel documentation screenshot"
-                                        class="aspect-video h-full w-full flex-1 rounded-[10px] object-top object-cover drop-shadow-[0px_4px_34px_rgba(0,0,0,0.06)] dark:hidden"
-                                        onerror="
-                                            document.getElementById('screenshot-container').classList.add('!hidden');
-                                            document.getElementById('docs-card').classList.add('!row-span-1');
-                                            document.getElementById('docs-card-content').classList.add('!flex-row');
-                                            document.getElementById('background').classList.add('!hidden');
-                                        "
-                                    />
-                                    <img
-                                        src="https://laravel.com/assets/img/welcome/docs-dark.svg"
-                                        alt="Laravel documentation screenshot"
-                                        class="hidden aspect-video h-full w-full flex-1 rounded-[10px] object-top object-cover drop-shadow-[0px_4px_34px_rgba(0,0,0,0.25)] dark:block"
-                                    />
-                                    <div
-                                        class="absolute -bottom-16 -left-16 h-40 w-[calc(100%+8rem)] bg-gradient-to-b from-transparent via-white to-white dark:via-zinc-900 dark:to-zinc-900"
-                                    ></div>
-                                </div>
-
-                                <div class="relative flex items-center gap-6 lg:items-end">
-                                    <div id="docs-card-content" class="flex items-start gap-6 lg:flex-col">
-                                        <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                            <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path fill="#FF2D20" d="M23 4a1 1 0 0 0-1.447-.894L12.224 7.77a.5.5 0 0 1-.448 0L2.447 3.106A1 1 0 0 0 1 4v13.382a1.99 1.99 0 0 0 1.105 1.79l9.448 4.728c.14.065.293.1.447.1.154-.005.306-.04.447-.105l9.453-4.724a1.99 1.99 0 0 0 1.1-1.789V4ZM3 6.023a.25.25 0 0 1 .362-.223l7.5 3.75a.251.251 0 0 1 .138.223v11.2a.25.25 0 0 1-.362.224l-7.5-3.75a.25.25 0 0 1-.138-.22V6.023Zm18 11.2a.25.25 0 0 1-.138.224l-7.5 3.75a.249.249 0 0 1-.329-.099.249.249 0 0 1-.033-.12V9.772a.251.251 0 0 1 .138-.224l7.5-3.75a.25.25 0 0 1 .362.224v11.2Z"/><path fill="#FF2D20" d="m3.55 1.893 8 4.048a1.008 1.008 0 0 0 .9 0l8-4.048a1 1 0 0 0-.9-1.785l-7.322 3.706a.506.506 0 0 1-.452 0L4.454.108a1 1 0 0 0-.9 1.785H3.55Z"/></svg>
-                                        </div>
-
-                                        <div class="pt-3 sm:pt-5 lg:pt-0">
-                                            <h2 class="text-xl font-semibold text-black dark:text-white">Documentation</h2>
-
-                                            <p class="mt-4 text-sm/relaxed">
-                                                Laravel has wonderful documentation covering every aspect of the framework. Whether you are a newcomer or have prior experience with Laravel, we recommend reading our documentation from beginning to end.
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <svg class="size-6 shrink-0 stroke-[#FF2D20]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
-                                </div>
-                            </a>
-
-                            <a
-                                href="https://laracasts.com"
-                                class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]"
-                            >
-                                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                    <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><g fill="#FF2D20"><path d="M24 8.25a.5.5 0 0 0-.5-.5H.5a.5.5 0 0 0-.5.5v12a2.5 2.5 0 0 0 2.5 2.5h19a2.5 2.5 0 0 0 2.5-2.5v-12Zm-7.765 5.868a1.221 1.221 0 0 1 0 2.264l-6.626 2.776A1.153 1.153 0 0 1 8 18.123v-5.746a1.151 1.151 0 0 1 1.609-1.035l6.626 2.776ZM19.564 1.677a.25.25 0 0 0-.177-.427H15.6a.106.106 0 0 0-.072.03l-4.54 4.543a.25.25 0 0 0 .177.427h3.783c.027 0 .054-.01.073-.03l4.543-4.543ZM22.071 1.318a.047.047 0 0 0-.045.013l-4.492 4.492a.249.249 0 0 0 .038.385.25.25 0 0 0 .14.042h5.784a.5.5 0 0 0 .5-.5v-2a2.5 2.5 0 0 0-1.925-2.432ZM13.014 1.677a.25.25 0 0 0-.178-.427H9.101a.106.106 0 0 0-.073.03l-4.54 4.543a.25.25 0 0 0 .177.427H8.4a.106.106 0 0 0 .073-.03l4.54-4.543ZM6.513 1.677a.25.25 0 0 0-.177-.427H2.5A2.5 2.5 0 0 0 0 3.75v2a.5.5 0 0 0 .5.5h1.4a.106.106 0 0 0 .073-.03l4.54-4.543Z"/></g></svg>
-                                </div>
-
-                                <div class="pt-3 sm:pt-5">
-                                    <h2 class="text-xl font-semibold text-black dark:text-white">Laracasts</h2>
-
-                                    <p class="mt-4 text-sm/relaxed">
-                                        Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                    </p>
-                                </div>
-
-                                <svg class="size-6 shrink-0 self-center stroke-[#FF2D20]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
-                            </a>
-
-                            <a
-                                href="https://laravel-news.com"
-                                class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]"
-                            >
-                                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                    <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><g fill="#FF2D20"><path d="M8.75 4.5H5.5c-.69 0-1.25.56-1.25 1.25v4.75c0 .69.56 1.25 1.25 1.25h3.25c.69 0 1.25-.56 1.25-1.25V5.75c0-.69-.56-1.25-1.25-1.25Z"/><path d="M24 10a3 3 0 0 0-3-3h-2V2.5a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2V20a3.5 3.5 0 0 0 3.5 3.5h17A3.5 3.5 0 0 0 24 20V10ZM3.5 21.5A1.5 1.5 0 0 1 2 20V3a.5.5 0 0 1 .5-.5h14a.5.5 0 0 1 .5.5v17c0 .295.037.588.11.874a.5.5 0 0 1-.484.625L3.5 21.5ZM22 20a1.5 1.5 0 1 1-3 0V9.5a.5.5 0 0 1 .5-.5H21a1 1 0 0 1 1 1v10Z"/><path d="M12.751 6.047h2a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-2A.75.75 0 0 1 12 7.3v-.5a.75.75 0 0 1 .751-.753ZM12.751 10.047h2a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-2A.75.75 0 0 1 12 11.3v-.5a.75.75 0 0 1 .751-.753ZM4.751 14.047h10a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-10A.75.75 0 0 1 4 15.3v-.5a.75.75 0 0 1 .751-.753ZM4.75 18.047h7.5a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-7.5A.75.75 0 0 1 4 19.3v-.5a.75.75 0 0 1 .75-.753Z"/></g></svg>
-                                </div>
-
-                                <div class="pt-3 sm:pt-5">
-                                    <h2 class="text-xl font-semibold text-black dark:text-white">Laravel News</h2>
-
-                                    <p class="mt-4 text-sm/relaxed">
-                                        Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                    </p>
-                                </div>
-
-                                <svg class="size-6 shrink-0 self-center stroke-[#FF2D20]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
-                            </a>
-
-                            <div class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]">
-                                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                    <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                        <g fill="#FF2D20">
-                                            <path
-                                                d="M16.597 12.635a.247.247 0 0 0-.08-.237 2.234 2.234 0 0 1-.769-1.68c.001-.195.03-.39.084-.578a.25.25 0 0 0-.09-.267 8.8 8.8 0 0 0-4.826-1.66.25.25 0 0 0-.268.181 2.5 2.5 0 0 1-2.4 1.824.045.045 0 0 0-.045.037 12.255 12.255 0 0 0-.093 3.86.251.251 0 0 0 .208.214c2.22.366 4.367 1.08 6.362 2.118a.252.252 0 0 0 .32-.079 10.09 10.09 0 0 0 1.597-3.733ZM13.616 17.968a.25.25 0 0 0-.063-.407A19.697 19.697 0 0 0 8.91 15.98a.25.25 0 0 0-.287.325c.151.455.334.898.548 1.328.437.827.981 1.594 1.619 2.28a.249.249 0 0 0 .32.044 29.13 29.13 0 0 0 2.506-1.99ZM6.303 14.105a.25.25 0 0 0 .265-.274 13.048 13.048 0 0 1 .205-4.045.062.062 0 0 0-.022-.07 2.5 2.5 0 0 1-.777-.982.25.25 0 0 0-.271-.149 11 11 0 0 0-5.6 2.815.255.255 0 0 0-.075.163c-.008.135-.02.27-.02.406.002.8.084 1.598.246 2.381a.25.25 0 0 0 .303.193 19.924 19.924 0 0 1 5.746-.438ZM9.228 20.914a.25.25 0 0 0 .1-.393 11.53 11.53 0 0 1-1.5-2.22 12.238 12.238 0 0 1-.91-2.465.248.248 0 0 0-.22-.187 18.876 18.876 0 0 0-5.69.33.249.249 0 0 0-.179.336c.838 2.142 2.272 4 4.132 5.353a.254.254 0 0 0 .15.048c1.41-.01 2.807-.282 4.117-.802ZM18.93 12.957l-.005-.008a.25.25 0 0 0-.268-.082 2.21 2.21 0 0 1-.41.081.25.25 0 0 0-.217.2c-.582 2.66-2.127 5.35-5.75 7.843a.248.248 0 0 0-.09.299.25.25 0 0 0 .065.091 28.703 28.703 0 0 0 2.662 2.12.246.246 0 0 0 .209.037c2.579-.701 4.85-2.242 6.456-4.378a.25.25 0 0 0 .048-.189 13.51 13.51 0 0 0-2.7-6.014ZM5.702 7.058a.254.254 0 0 0 .2-.165A2.488 2.488 0 0 1 7.98 5.245a.093.093 0 0 0 .078-.062 19.734 19.734 0 0 1 3.055-4.74.25.25 0 0 0-.21-.41 12.009 12.009 0 0 0-10.4 8.558.25.25 0 0 0 .373.281 12.912 12.912 0 0 1 4.826-1.814ZM10.773 22.052a.25.25 0 0 0-.28-.046c-.758.356-1.55.635-2.365.833a.25.25 0 0 0-.022.48c1.252.43 2.568.65 3.893.65.1 0 .2 0 .3-.008a.25.25 0 0 0 .147-.444c-.526-.424-1.1-.917-1.673-1.465ZM18.744 8.436a.249.249 0 0 0 .15.228 2.246 2.246 0 0 1 1.352 2.054c0 .337-.08.67-.23.972a.25.25 0 0 0 .042.28l.007.009a15.016 15.016 0 0 1 2.52 4.6.25.25 0 0 0 .37.132.25.25 0 0 0 .096-.114c.623-1.464.944-3.039.945-4.63a12.005 12.005 0 0 0-5.78-10.258.25.25 0 0 0-.373.274c.547 2.109.85 4.274.901 6.453ZM9.61 5.38a.25.25 0 0 0 .08.31c.34.24.616.561.8.935a.25.25 0 0 0 .3.127.631.631 0 0 1 .206-.034c2.054.078 4.036.772 5.69 1.991a.251.251 0 0 0 .267.024c.046-.024.093-.047.141-.067a.25.25 0 0 0 .151-.23A29.98 29.98 0 0 0 15.957.764a.25.25 0 0 0-.16-.164 11.924 11.924 0 0 0-2.21-.518.252.252 0 0 0-.215.076A22.456 22.456 0 0 0 9.61 5.38Z"
-                                            />
-                                        </g>
-                                    </svg>
-                                </div>
-
-                                <div class="pt-3 sm:pt-5">
-                                    <h2 class="text-xl font-semibold text-black dark:text-white">Vibrant Ecosystem</h2>
-
-                                    <p class="mt-4 text-sm/relaxed">
-                                        Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white dark:focus-visible:ring-[#FF2D20]">Forge</a>, <a href="https://vapor.laravel.com" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Vapor</a>, <a href="https://nova.laravel.com" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Nova</a>, <a href="https://envoyer.io" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Envoyer</a>, and <a href="https://herd.laravel.com" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Herd</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Echo</a>, <a href="https://laravel.com/docs/horizon" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Telescope</a>, and more.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </main>
-
-                    <footer class="py-16 text-center text-sm text-black dark:text-white/70">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-                    </footer>
-                </div>
-            </div>
+            <span class="tc sf">
+              <a href="#" class="inline-block ek xj kk wm">
+                Call us (0123) 456 – 789
+              </a>
+              <span class="inline-block">For any question or concern</span>
+            </span>
+          </div>
         </div>
-    </body>
-</html>
+      </div>
+    </div>
+  </section>
+  <!-- ===== Hero End ===== -->
+
+  <!-- ===== Small Features Start ===== -->
+  <section id="features">
+    <div class="bb ze ki yn 2xl:ud-px-12.5">
+      <div class="tc uf zo xf ap zf bp mq">
+        <!-- Small Features Item -->
+        <div class="animate_top kn to/3 tc cg oq">
+          <div class="tc wf xf cf ae cd rg mh">
+            <img src="{{ asset('template-blog/images/icon-01.svg') }}" alt="Icon" />
+          </div>
+          <div>
+            <h4 class="ek yj go kk wm xb">200</h4>
+            <p>Total Anggota</p>
+          </div>
+        </div>
+
+        <!-- Small Features Item -->
+        <div class="animate_top kn to/3 tc cg oq">
+          <div class="tc wf xf cf ae cd rg nh">
+            <img src="{{ asset('template-blog/images/icon-03.svg') }}" alt="Icon" />
+          </div>
+          <div>
+            <h4 class="ek yj go kk wm xb">18</h4>
+            <p>Pimpinan Anak Cabang</p>
+          </div>
+        </div>
+
+        <!-- Small Features Item -->
+        <div class="animate_top kn to/3 tc cg oq">
+          <div class="tc wf xf cf ae cd rg oh">
+            <img src="{{ asset('template-blog/images/icon-02.svg') }}" alt="Icon" />
+          </div>
+          <div>
+            <h4 class="ek yj go kk wm xb">10</h4>
+            <p>Pimpinan Komisariat</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== Small Features End ===== -->
+
+  <!-- ===== About Start ===== -->
+  <section class="ji gp uq 2xl:ud-py-35 pg">
+    <div class="bb ze ki xn wq">
+      <div class="tc wf gg qq">
+        <!-- About Images -->
+        <div class="animate_left xc gn gg jn/2 i">
+          <div>
+            <img
+              src="images/shape-05.svg"
+              alt="Shape"
+              class="h -ud-left-5 x"
+            />
+            <img src="images/about-01.png" alt="About" class="ib" />
+            <img src="images/about-02.png" alt="About" />
+          </div>
+          <div>
+            <img src="images/shape-06.svg" alt="Shape" />
+            <img src="images/about-03.png" alt="About" class="ob gb" />
+            <img src="images/shape-07.svg" alt="Shape" class="bb" />
+          </div>
+        </div>
+
+        <!-- About Content -->
+        <div class="animate_right jn/2">
+          <h4 class="ek yj mk gb">Why Choose Us</h4>
+          <h2 class="fk vj zp pr kk wm qb">
+            We Make Our customers happy by giving Best services.
+          </h2>
+          <p class="uo">
+            It is a long established fact that a reader will be distracted
+            by the readable content of a page when looking at its layout.
+            The point of using Lorem Ipsum.
+          </p>
+
+          <a
+            href="https://www.youtube.com/watch?v=xcJtL7QggTI"
+            data-fslightbox
+            class="vc wf hg mb"
+          >
+            <span class="tc wf xf be dd rg i gh ua">
+              <span class="nf h vc yc vd rg gh qk -ud-z-1"></span>
+              <img src="images/icon-play.svg" alt="Play" />
+            </span>
+            <span class="kk">SEE HOW WE WORK</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== About End ===== -->
+
+  <!-- ===== Team Start ===== -->
+  <section class="i pg ji gp uq">
+    <!-- Bg Shapes -->
+    <span class="rc h s r vd fd/5 fh rm"></span>
+    <img src="images/shape-08.svg" alt="Shape Bg" class="h q r" />
+    <img src="images/shape-09.svg" alt="Shape" class="of h y z/2" />
+    <img src="images/shape-10.svg" alt="Shape" class="h _ aa" />
+    <img src="images/shape-11.svg" alt="Shape" class="of h m ba" />
+
+    <!-- Section Title Start -->
+    <div
+      x-data="{ sectionTitle: `Meet With Our Creative Dedicated Team`, sectionTitleText: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.`}"
+    >
+      <div class="animate_top bb ze rj ki xn vq">
+        <h2
+          x-text="sectionTitle"
+          class="fk vj pr kk wm on/5 gq/2 bb _b"
+        ></h2>
+        <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
+      </div>
+    </div>
+    <!-- Section Title End -->
+
+    <div class="bb ze i va ki xn xq jb jo">
+      <div class="wc qf pn xo gg cp">
+        <!-- Team Item -->
+        <div class="animate_top rj">
+          <div class="c i pg z-1">
+            <img class="vd" src="images/team-01.png" alt="Team" />
+
+            <div class="ef im nl il">
+              <span
+                class="h -ud-left-5 -ud-bottom-21 rc de gd gh if wa"
+              ></span>
+              <span class="h s p rc vd hd mh va"></span>
+              <div class="h s p vd ij jj xa">
+                <ul class="tc xf wf gg">
+                  <li>
+                    <a href="#">
+                      <svg
+                        class="uh vl ml il"
+                        width="10"
+                        height="18"
+                        viewBox="0 0 10 18"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6.66634 10.25H8.74968L9.58301 6.91669H6.66634V5.25002C6.66634 4.39169 6.66634 3.58335 8.33301 3.58335H9.58301V0.783354C9.31134 0.74752 8.28551 0.666687 7.20218 0.666687C4.93968 0.666687 3.33301 2.04752 3.33301 4.58335V6.91669H0.833008V10.25H3.33301V17.3334H6.66634V10.25Z"
+                          fill=""
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <svg
+                        class="uh vl ml il"
+                        width="18"
+                        height="14"
+                        viewBox="0 0 18 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.4683 1.71333C16.8321 1.99475 16.1574 2.17956 15.4666 2.26167C16.1947 1.82619 16.7397 1.14085 16.9999 0.333333C16.3166 0.74 15.5674 1.025 14.7866 1.17917C14.2621 0.617982 13.5669 0.245803 12.809 0.120487C12.0512 -0.00482822 11.2732 0.123742 10.596 0.486211C9.91875 0.848679 9.38024 1.42474 9.06418 2.12483C8.74812 2.82492 8.67221 3.60982 8.84825 4.3575C7.46251 4.28805 6.10686 3.92794 4.86933 3.30055C3.63179 2.67317 2.54003 1.79254 1.66492 0.715833C1.35516 1.24788 1.19238 1.85269 1.19326 2.46833C1.19326 3.67667 1.80826 4.74417 2.74326 5.36917C2.18993 5.35175 1.64878 5.20232 1.16492 4.93333V4.97667C1.16509 5.78142 1.44356 6.56135 1.95313 7.18422C2.46269 7.80709 3.17199 8.23456 3.96075 8.39417C3.4471 8.53337 2.90851 8.55388 2.38576 8.45417C2.60814 9.14686 3.04159 9.75267 3.62541 10.1868C4.20924 10.6209 4.9142 10.8615 5.64159 10.875C4.91866 11.4428 4.0909 11.8625 3.20566 12.1101C2.32041 12.3578 1.39503 12.4285 0.482422 12.3183C2.0755 13.3429 3.93 13.8868 5.82409 13.885C12.2349 13.885 15.7408 8.57417 15.7408 3.96833C15.7408 3.81833 15.7366 3.66667 15.7299 3.51833C16.4123 3.02514 17.0013 2.41418 17.4691 1.71417L17.4683 1.71333Z"
+                          fill=""
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <svg
+                        class="uh vl ml il"
+                        width="17"
+                        height="16"
+                        viewBox="0 0 17 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.78353 2.16665C3.78331 2.60867 3.6075 3.03251 3.29478 3.34491C2.98207 3.65732 2.55806 3.8327 2.11603 3.83248C1.674 3.83226 1.25017 3.65645 0.937761 3.34373C0.625357 3.03102 0.449975 2.60701 0.450196 2.16498C0.450417 1.72295 0.626223 1.29912 0.93894 0.986712C1.25166 0.674307 1.67567 0.498925 2.1177 0.499146C2.55972 0.499367 2.98356 0.675173 3.29596 0.98789C3.60837 1.30061 3.78375 1.72462 3.78353 2.16665V2.16665ZM3.83353 5.06665H0.500195V15.5H3.83353V5.06665ZM9.1002 5.06665H5.78353V15.5H9.06686V10.025C9.06686 6.97498 13.0419 6.69165 13.0419 10.025V15.5H16.3335V8.89165C16.3335 3.74998 10.4502 3.94165 9.06686 6.46665L9.1002 5.06665V5.06665Z"
+                          fill=""
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <h4 class="yj go kk wm ob zb">Olivia Andrium</h4>
+          <p>Product Manager</p>
+        </div>
+
+        <!-- Team Item -->
+        <div class="animate_top rj">
+          <div class="c i pg z-1">
+            <img class="vd" src="images/team-02.png" alt="Team" />
+
+            <div class="ef im nl il">
+              <span
+                class="h -ud-left-5 -ud-bottom-21 rc de gd gh if wa"
+              ></span>
+              <span class="h s p rc vd hd mh va"></span>
+              <div class="h s p vd ij jj xa">
+                <ul class="tc xf wf gg">
+                  <li>
+                    <a href="#">
+                      <svg
+                        class="uh vl ml il"
+                        width="10"
+                        height="18"
+                        viewBox="0 0 10 18"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6.66634 10.25H8.74968L9.58301 6.91669H6.66634V5.25002C6.66634 4.39169 6.66634 3.58335 8.33301 3.58335H9.58301V0.783354C9.31134 0.74752 8.28551 0.666687 7.20218 0.666687C4.93968 0.666687 3.33301 2.04752 3.33301 4.58335V6.91669H0.833008V10.25H3.33301V17.3334H6.66634V10.25Z"
+                          fill=""
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <svg
+                        class="uh vl ml il"
+                        width="18"
+                        height="14"
+                        viewBox="0 0 18 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.4683 1.71333C16.8321 1.99475 16.1574 2.17956 15.4666 2.26167C16.1947 1.82619 16.7397 1.14085 16.9999 0.333333C16.3166 0.74 15.5674 1.025 14.7866 1.17917C14.2621 0.617982 13.5669 0.245803 12.809 0.120487C12.0512 -0.00482822 11.2732 0.123742 10.596 0.486211C9.91875 0.848679 9.38024 1.42474 9.06418 2.12483C8.74812 2.82492 8.67221 3.60982 8.84825 4.3575C7.46251 4.28805 6.10686 3.92794 4.86933 3.30055C3.63179 2.67317 2.54003 1.79254 1.66492 0.715833C1.35516 1.24788 1.19238 1.85269 1.19326 2.46833C1.19326 3.67667 1.80826 4.74417 2.74326 5.36917C2.18993 5.35175 1.64878 5.20232 1.16492 4.93333V4.97667C1.16509 5.78142 1.44356 6.56135 1.95313 7.18422C2.46269 7.80709 3.17199 8.23456 3.96075 8.39417C3.4471 8.53337 2.90851 8.55388 2.38576 8.45417C2.60814 9.14686 3.04159 9.75267 3.62541 10.1868C4.20924 10.6209 4.9142 10.8615 5.64159 10.875C4.91866 11.4428 4.0909 11.8625 3.20566 12.1101C2.32041 12.3578 1.39503 12.4285 0.482422 12.3183C2.0755 13.3429 3.93 13.8868 5.82409 13.885C12.2349 13.885 15.7408 8.57417 15.7408 3.96833C15.7408 3.81833 15.7366 3.66667 15.7299 3.51833C16.4123 3.02514 17.0013 2.41418 17.4691 1.71417L17.4683 1.71333Z"
+                          fill=""
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <svg
+                        class="uh vl ml il"
+                        width="17"
+                        height="16"
+                        viewBox="0 0 17 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.78353 2.16665C3.78331 2.60867 3.6075 3.03251 3.29478 3.34491C2.98207 3.65732 2.55806 3.8327 2.11603 3.83248C1.674 3.83226 1.25017 3.65645 0.937761 3.34373C0.625357 3.03102 0.449975 2.60701 0.450196 2.16498C0.450417 1.72295 0.626223 1.29912 0.93894 0.986712C1.25166 0.674307 1.67567 0.498925 2.1177 0.499146C2.55972 0.499367 2.98356 0.675173 3.29596 0.98789C3.60837 1.30061 3.78375 1.72462 3.78353 2.16665V2.16665ZM3.83353 5.06665H0.500195V15.5H3.83353V5.06665ZM9.1002 5.06665H5.78353V15.5H9.06686V10.025C9.06686 6.97498 13.0419 6.69165 13.0419 10.025V15.5H16.3335V8.89165C16.3335 3.74998 10.4502 3.94165 9.06686 6.46665L9.1002 5.06665V5.06665Z"
+                          fill=""
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <h4 class="yj go kk wm ob zb">Jemse Kemorun</h4>
+          <p>Product Designer</p>
+        </div>
+
+        <!-- Team Item -->
+        <div class="animate_top rj">
+          <div class="c i pg z-1">
+            <img class="vd" src="images/team-03.png" alt="Team" />
+
+            <div class="ef im nl il">
+              <span
+                class="h -ud-left-5 -ud-bottom-21 rc de gd gh if wa"
+              ></span>
+              <span class="h s p rc vd hd mh va"></span>
+              <div class="h s p vd ij jj xa">
+                <ul class="tc xf wf gg">
+                  <li>
+                    <a href="#">
+                      <svg
+                        class="uh vl ml il"
+                        width="10"
+                        height="18"
+                        viewBox="0 0 10 18"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6.66634 10.25H8.74968L9.58301 6.91669H6.66634V5.25002C6.66634 4.39169 6.66634 3.58335 8.33301 3.58335H9.58301V0.783354C9.31134 0.74752 8.28551 0.666687 7.20218 0.666687C4.93968 0.666687 3.33301 2.04752 3.33301 4.58335V6.91669H0.833008V10.25H3.33301V17.3334H6.66634V10.25Z"
+                          fill=""
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <svg
+                        class="uh vl ml il"
+                        width="18"
+                        height="14"
+                        viewBox="0 0 18 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.4683 1.71333C16.8321 1.99475 16.1574 2.17956 15.4666 2.26167C16.1947 1.82619 16.7397 1.14085 16.9999 0.333333C16.3166 0.74 15.5674 1.025 14.7866 1.17917C14.2621 0.617982 13.5669 0.245803 12.809 0.120487C12.0512 -0.00482822 11.2732 0.123742 10.596 0.486211C9.91875 0.848679 9.38024 1.42474 9.06418 2.12483C8.74812 2.82492 8.67221 3.60982 8.84825 4.3575C7.46251 4.28805 6.10686 3.92794 4.86933 3.30055C3.63179 2.67317 2.54003 1.79254 1.66492 0.715833C1.35516 1.24788 1.19238 1.85269 1.19326 2.46833C1.19326 3.67667 1.80826 4.74417 2.74326 5.36917C2.18993 5.35175 1.64878 5.20232 1.16492 4.93333V4.97667C1.16509 5.78142 1.44356 6.56135 1.95313 7.18422C2.46269 7.80709 3.17199 8.23456 3.96075 8.39417C3.4471 8.53337 2.90851 8.55388 2.38576 8.45417C2.60814 9.14686 3.04159 9.75267 3.62541 10.1868C4.20924 10.6209 4.9142 10.8615 5.64159 10.875C4.91866 11.4428 4.0909 11.8625 3.20566 12.1101C2.32041 12.3578 1.39503 12.4285 0.482422 12.3183C2.0755 13.3429 3.93 13.8868 5.82409 13.885C12.2349 13.885 15.7408 8.57417 15.7408 3.96833C15.7408 3.81833 15.7366 3.66667 15.7299 3.51833C16.4123 3.02514 17.0013 2.41418 17.4691 1.71417L17.4683 1.71333Z"
+                          fill=""
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <svg
+                        class="uh vl ml il"
+                        width="17"
+                        height="16"
+                        viewBox="0 0 17 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.78353 2.16665C3.78331 2.60867 3.6075 3.03251 3.29478 3.34491C2.98207 3.65732 2.55806 3.8327 2.11603 3.83248C1.674 3.83226 1.25017 3.65645 0.937761 3.34373C0.625357 3.03102 0.449975 2.60701 0.450196 2.16498C0.450417 1.72295 0.626223 1.29912 0.93894 0.986712C1.25166 0.674307 1.67567 0.498925 2.1177 0.499146C2.55972 0.499367 2.98356 0.675173 3.29596 0.98789C3.60837 1.30061 3.78375 1.72462 3.78353 2.16665V2.16665ZM3.83353 5.06665H0.500195V15.5H3.83353V5.06665ZM9.1002 5.06665H5.78353V15.5H9.06686V10.025C9.06686 6.97498 13.0419 6.69165 13.0419 10.025V15.5H16.3335V8.89165C16.3335 3.74998 10.4502 3.94165 9.06686 6.46665L9.1002 5.06665V5.06665Z"
+                          fill=""
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <h4 class="yj go kk wm ob zb">Avi Pestarica</h4>
+          <p>Web Designer</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== Team End ===== -->
+
+  <!-- ===== Services Start ===== -->
+  <section class="lj tp kr">
+    <!-- Section Title Start -->
+    <div
+      x-data="{ sectionTitle: `We Offer The Best Quality Service for You`, sectionTitleText: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.`}"
+    >
+      <div class="animate_top bb ze rj ki xn vq">
+        <h2
+          x-text="sectionTitle"
+          class="fk vj pr kk wm on/5 gq/2 bb _b"
+        ></h2>
+        <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
+      </div>
+    </div>
+    <!-- Section Title End -->
+
+    <div class="bb ze ki xn yq mb en">
+      <div class="wc qf pn xo ng">
+        <!-- Service Item -->
+        <div class="animate_top sg oi pi zq ml il am cn _m">
+          <img src="images/icon-04.svg" alt="Icon" />
+          <h4 class="ek zj kk wm nb _b">Crafted for Startups</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+            convallis tortor.
+          </p>
+        </div>
+
+        <!-- Service Item -->
+        <div class="animate_top sg oi pi zq ml il am cn _m">
+          <img src="images/icon-05.svg" alt="Icon" />
+          <h4 class="ek zj kk wm nb _b">High-quality Design</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+            convallis tortor.
+          </p>
+        </div>
+
+        <!-- Service Item -->
+        <div class="animate_top sg oi pi zq ml il am cn _m">
+          <img src="images/icon-06.svg" alt="Icon" />
+          <h4 class="ek zj kk wm nb _b">All Essential Sections</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+            convallis tortor.
+          </p>
+        </div>
+
+        <!-- Service Item -->
+        <div class="animate_top sg oi pi zq ml il am cn _m">
+          <img src="images/icon-07.svg" alt="Icon" />
+          <h4 class="ek zj kk wm nb _b">Speed Optimized</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+            convallis tortor.
+          </p>
+        </div>
+
+        <!-- Service Item -->
+        <div class="animate_top sg oi pi zq ml il am cn _m">
+          <img src="images/icon-05.svg" alt="Icon" />
+          <h4 class="ek zj kk wm nb _b">Fully Customizable</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+            convallis tortor.
+          </p>
+        </div>
+
+        <!-- Service Item -->
+        <div class="animate_top sg oi pi zq ml il am cn _m">
+          <img src="images/icon-06.svg" alt="Icon" />
+          <h4 class="ek zj kk wm nb _b">Regular Updates</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+            convallis tortor.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== Services End ===== -->
+
+  <!-- ===== Pricing Table Start ===== -->
+  <section x-data="setup()" class="i pg fh rm ji gp uq">
+    <!-- Bg Shapes -->
+    <img src="images/shape-06.svg" alt="Shape" class="h aa y" />
+    <img src="images/shape-03.svg" alt="Shape" class="h ca u" />
+    <img src="images/shape-07.svg" alt="Shape" class="h w da ee" />
+    <img src="images/shape-12.svg" alt="Shape" class="h p s" />
+    <img src="images/shape-13.svg" alt="Shape" class="h r q" />
+
+    <!-- Section Title Start -->
+    <div
+      x-data="{ sectionTitle: `We Offer Great Affordable Premium Prices.`, sectionTitleText: `It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using.`}"
+    >
+      <div class="animate_top bb ze rj ki xn vq">
+        <h2
+          x-text="sectionTitle"
+          class="fk vj pr kk wm on/5 gq/2 bb _b"
+        ></h2>
+        <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
+      </div>
+    </div>
+    <!-- Section Title End -->
+
+    <!-- Pricing switcher -->
+    <div class="tc wf xf jb og">
+      <span class="ek kk wm">Bill Monthly</span>
+      <button
+        class="i rg gm"
+        x-cloak
+        @click="billPlan == 'monthly' ? billPlan = 'annually' : billPlan = 'monthly'"
+      >
+        <div class="fe id bl gh rg xk outline-none"></div>
+        <div
+          class="h vc wf xf ge jd cl jl ml mf hh rg yk ea fa"
+          :class="{ 'ff': billPlan == 'monthly', 'gf': billPlan == 'annually' }"
+        ></div>
+      </button>
+      <span class="ek kk wm">Bill Annually</span>
+    </div>
+
+    <!-- Pricing Table -->
+    <div class="bb ze i va ki xn yq bc">
+      <div class="wc qf pn xo jg">
+        <template x-for="(plan, i) in plans" x-key="i">
+          <!-- Pricing Item -->
+          <div class="animate_top rj sg hh sm vk xm hi nj oj">
+            <h4 x-text="plan.name" class="wj kk wm fb"></h4>
+
+            <div class="tc wf xf kg cc">
+              <h2
+                :class="plan.name == 'Basic' ? 'text-green-500' : ''"
+                x-text="`$${billPlan == 'monthly' ? plan.price.monthly : plan.price.annually}`"
+                class="fk _j kk wm"
+              ></h2>
+              <span
+                x-text="billPlan == 'monthly' ? '/per month' : '/per year'"
+                class="sc ak kk wm"
+              ></span>
+            </div>
+
+            <p class="ur dc">No credit card required</p>
+
+            <!-- Button -->
+            <a
+              href="#"
+              class="ek rg lk ml il gi ri"
+              :class="plan.name == 'Growth Plan' ? 'gh sl' : 'mh tl'"
+            >
+              Try for free
+            </a>
+
+            <!-- Features -->
+            <ul class="tc sf bg ob fb">
+              <template x-for="(feature, i) in plan.features" x-key="i">
+                <li x-text="feature"></li>
+              </template>
+            </ul>
+
+            <p class="kk wm">7-day free trial</p>
+          </div>
+        </template>
+      </div>
+    </div>
+  </section>
+  <!-- ===== Pricing Table End ===== -->
+
+  <!-- ===== Projects Start ===== -->
+  <section class="pg pj vp mr oj wp nr">
+    <!-- Section Title Start -->
+    <div
+      x-data="{ sectionTitle: `We Offer Great Affordable Premium Prices.`, sectionTitleText: `It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using.`}"
+    >
+      <div class="animate_top bb ze rj ki xn vq">
+        <h2
+          x-text="sectionTitle"
+          class="fk vj pr kk wm on/5 gq/2 bb _b"
+        ></h2>
+        <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
+      </div>
+    </div>
+    <!-- Section Title End -->
+
+    <div class="bb ze ki xn 2xl:ud-px-0 jb" x-data="{filterTab: 1}">
+      <!-- Porject Tab -->
+      <div
+        class="projects-tab _e bb tc uf wf xf cg rg hh rm vk xm si ti fc"
+      >
+        <button
+          data-filter="*"
+          @click="filterTab = 1"
+          :class="{ 'gh lk' : filterTab === 1 }"
+          class="project-tab-btn ek rg ml il vi mi"
+        >
+          All
+        </button>
+        <button
+          data-filter=".branding"
+          @click="filterTab = 2"
+          :class="{ 'gh lk' : filterTab === 2 }"
+          class="project-tab-btn ek rg ml il vi mi"
+        >
+          Branding Strategy
+        </button>
+        <button
+          data-filter=".digital"
+          @click="filterTab = 3"
+          :class="{ 'gh lk' : filterTab === 3 }"
+          class="project-tab-btn ek rg ml il vi mi"
+        >
+          Digital Experiences
+        </button>
+        <button
+          data-filter=".ecommerce"
+          @click="filterTab = 4"
+          :class="{ 'gh lk' : filterTab === 4 }"
+          class="project-tab-btn ek rg ml il vi mi"
+        >
+          Ecommerce
+        </button>
+      </div>
+
+      <!-- Projects item wrapper -->
+      <div class="projects-wrapper tc -ud-mx-5">
+        <div class="project-sizer"></div>
+        <!-- Project Item -->
+        <div class="project-item wi fb vd jn/2 to/3 branding ecommerce">
+          <div class="c i pg sg z-1">
+            <img src="images/project-01.png" alt="Project" />
+
+            <div
+              class="h s r df nl kl im tc sf wf xf vd yc sg al hh/20 z-10"
+            >
+              <h4 class="ek tj kk hc">Photo Retouching</h4>
+              <p>Branded Ecommerce</p>
+              <a
+                class="c tc wf xf ie ld rg _g dh ml il ph jm km jc"
+                href="#"
+              >
+                <svg
+                  class="th lm ml il"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10.4763 6.16664L6.00634 1.69664L7.18467 0.518311L13.6663 6.99998L7.18467 13.4816L6.00634 12.3033L10.4763 7.83331H0.333008V6.16664H10.4763Z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Item -->
+        <div class="project-item wi fb vd jn/2 to/3 digital">
+          <div class="c i pg sg z-1">
+            <img src="images/project-02.png" alt="Project" />
+
+            <div
+              class="h s r df nl kl im tc sf wf xf vd yc sg al hh/20 z-10"
+            >
+              <h4 class="ek tj kk hc">Photo Retouching</h4>
+              <p>Branded Ecommerce</p>
+              <a
+                class="c tc wf xf ie ld rg _g dh ml il ph jm km jc"
+                href="#"
+              >
+                <svg
+                  class="th lm ml il"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10.4763 6.16664L6.00634 1.69664L7.18467 0.518311L13.6663 6.99998L7.18467 13.4816L6.00634 12.3033L10.4763 7.83331H0.333008V6.16664H10.4763Z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Item -->
+        <div class="project-item wi fb vd jn/2 to/3 branding ecommerce">
+          <div class="c i pg sg z-1">
+            <img src="images/project-04.png" alt="Project" />
+
+            <div
+              class="h s r df nl kl im tc sf wf xf vd yc sg al hh/20 z-10"
+            >
+              <h4 class="ek tj kk hc">Photo Retouching</h4>
+              <p>Branded Ecommerce</p>
+              <a
+                class="c tc wf xf ie ld rg _g dh ml il ph jm km jc"
+                href="#"
+              >
+                <svg
+                  class="th lm ml il"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10.4763 6.16664L6.00634 1.69664L7.18467 0.518311L13.6663 6.99998L7.18467 13.4816L6.00634 12.3033L10.4763 7.83331H0.333008V6.16664H10.4763Z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Item -->
+        <div class="project-item wi fb vd vo/3 digital ecommerce">
+          <div class="c i pg sg z-1">
+            <img src="images/project-03.png" alt="Project" />
+
+            <div
+              class="h s r df nl kl im tc sf wf xf vd yc sg al hh/20 z-10"
+            >
+              <h4 class="ek tj kk hc">Photo Retouching</h4>
+              <p>Branded Ecommerce</p>
+              <a
+                class="c tc wf xf ie ld rg _g dh ml il ph jm km jc"
+                href="#"
+              >
+                <svg
+                  class="th lm ml il"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10.4763 6.16664L6.00634 1.69664L7.18467 0.518311L13.6663 6.99998L7.18467 13.4816L6.00634 12.3033L10.4763 7.83331H0.333008V6.16664H10.4763Z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== Projects End ===== -->
+
+  <!-- ===== Testimonials Start ===== -->
+  <section class="hj rp hr">
+    <!-- Section Title Start -->
+    <div
+      x-data="{ sectionTitle: `Client’s Testimonials`, sectionTitleText: `It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using.`}"
+    >
+      <div class="animate_top bb ze rj ki xn vq">
+        <h2
+          x-text="sectionTitle"
+          class="fk vj pr kk wm on/5 gq/2 bb _b"
+        ></h2>
+        <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
+      </div>
+    </div>
+    <!-- Section Title End -->
+
+    <div class="bb ze ki xn ar">
+      <div class="animate_top jb cq">
+        <!-- Slider main container -->
+        <div class="swiper testimonial-01">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <div class="i hh rm sg vk xm bi qj">
+                <!-- Border Shape -->
+                <span class="rc je md/2 gh xg h q r"></span>
+                <span class="rc je md/2 mh yg h q p"></span>
+
+                <div class="tc sf rn tn un zf dp">
+                  <img class="bf" src="images/testimonial.png" alt="User" />
+
+                  <div>
+                    <img src="images/icon-quote.svg" alt="Quote" />
+                    <p class="ek ik xj _p kc fb">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing
+                      elit. In dolor diam, feugiat quis enim sed,
+                      ullamcorper semper ligula. Mauris consequat justo
+                      volutpat.
+                    </p>
+
+                    <div class="tc yf vf">
+                      <div>
+                        <span class="rc ek xj kk wm zb">Devid Smith</span>
+                        <span class="rc">Founter @democompany</span>
+                      </div>
+
+                      <img
+                        class="rk"
+                        src="images/brand-light-02.svg"
+                        alt="Brand"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- If we need navigation -->
+          <div class="tc wf xf fg jb">
+            <div
+              class="swiper-button-prev c tc wf xf ie ld rg _g dh pf ml vr hh rm tl zm rl ym"
+            >
+              <svg
+                class="th lm"
+                width="14"
+                height="14"
+                viewBox="0 0 14 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3.52366 7.83336L7.99366 12.3034L6.81533 13.4817L0.333663 7.00002L6.81533 0.518357L7.99366 1.69669L3.52366 6.16669L13.667 6.16669L13.667 7.83336L3.52366 7.83336Z"
+                  fill=""
+                />
+              </svg>
+            </div>
+            <div
+              class="swiper-button-next c tc wf xf ie ld rg _g dh pf ml vr hh rm tl zm rl ym"
+            >
+              <svg
+                class="th lm"
+                width="14"
+                height="14"
+                viewBox="0 0 14 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10.4763 6.16664L6.00634 1.69664L7.18467 0.518311L13.6663 6.99998L7.18467 13.4816L6.00634 12.3033L10.4763 7.83331H0.333008V6.16664H10.4763Z"
+                  fill=""
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== Testimonials End ===== -->
+
+  <!-- ===== Counter Start ===== -->
+  <section class="i pg qh rm ji hp">
+    <img src="images/shape-11.svg" alt="Shape" class="of h ga ha ke" />
+    <img src="images/shape-07.svg" alt="Shape" class="h ia o ae jf" />
+    <img src="images/shape-14.svg" alt="Shape" class="h ja ka" />
+    <img src="images/shape-15.svg" alt="Shape" class="h q p" />
+
+    <div class="bb ze i va ki xn br">
+      <div class="tc uf sn tn xf un gg">
+        <div class="animate_top me/5 ln rj">
+          <h2 class="gk vj zp or kk wm hc">785</h2>
+          <p class="ek bk aq">Global Brands</p>
+        </div>
+        <div class="animate_top me/5 ln rj">
+          <h2 class="gk vj zp or kk wm hc">533</h2>
+          <p class="ek bk aq">Happy Clients</p>
+        </div>
+        <div class="animate_top me/5 ln rj">
+          <h2 class="gk vj zp or kk wm hc">865</h2>
+          <p class="ek bk aq">Winning Award</p>
+        </div>
+        <div class="animate_top me/5 ln rj">
+          <h2 class="gk vj zp or kk wm hc">346</h2>
+          <p class="ek bk aq">Happy Clients</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== Counter End ===== -->
+
+  <!-- ===== Clients Start ===== -->
+  <section class="pj vp mr">
+    <!-- Section Title Start -->
+    <div
+      x-data="{ sectionTitle: `Trusted by Global Brands`, sectionTitleText: `It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using.`}"
+    >
+      <div class="animate_top bb ze rj ki xn vq">
+        <h2
+          x-text="sectionTitle"
+          class="fk vj pr kk wm on/5 gq/2 bb _b"
+        ></h2>
+        <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
+      </div>
+    </div>
+    <!-- Section Title End -->
+
+    <div class="bb ze ah ch pm hj xp ki xn 2xl:ud-px-49 bc">
+      <div class="wc rf qn zf cp kq xf wf">
+        <a href="#" class="rc animate_top">
+          <img
+            class="th wl ml il zl om"
+            src="images/brand-light-01.svg"
+            alt="Clients"
+          />
+          <img
+            class="xc sk ml il zl nm"
+            src="images/brand-dark-01.svg"
+            alt="Clients"
+          />
+        </a>
+        <a href="#" class="rc animate_top">
+          <img
+            class="tk ml il zl om"
+            src="images/brand-light-02.svg"
+            alt="Clients"
+          />
+          <img
+            class="xc sk ml il zl nm"
+            src="images/brand-dark-02.svg"
+            alt="Clients"
+          />
+        </a>
+        <a href="#" class="rc animate_top">
+          <img
+            class="tk ml il zl om"
+            src="images/brand-light-03.svg"
+            alt="Clients"
+          />
+          <img
+            class="xc sk ml il zl nm"
+            src="images/brand-dark-03.svg"
+            alt="Clients"
+          />
+        </a>
+        <a href="#" class="rc animate_top">
+          <img
+            class="tk ml il zl om"
+            src="images/brand-light-04.svg"
+            alt="Clients"
+          />
+          <img
+            class="xc sk ml il zl nm"
+            src="images/brand-dark-04.svg"
+            alt="Clients"
+          />
+        </a>
+        <a href="#" class="rc animate_top">
+          <img
+            class="tk ml il zl om"
+            src="images/brand-light-05.svg"
+            alt="Clients"
+          />
+          <img
+            class="xc sk ml il zl nm"
+            src="images/brand-dark-05.svg"
+            alt="Clients"
+          />
+        </a>
+        <a href="#" class="rc animate_top">
+          <img
+            class="tk ml il zl om"
+            src="images/brand-light-06.svg"
+            alt="Clients"
+          />
+          <img
+            class="xc sk ml il zl nm"
+            src="images/brand-dark-06.svg"
+            alt="Clients"
+          />
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- ===== Clients End ===== -->
+
+  <!-- ===== Blog Start ===== -->
+  <section class="ji gp uq">
+    <!-- Section Title Start -->
+    <div
+      x-data="{ sectionTitle: `Latest Blogs & News`, sectionTitleText: `It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using.`}"
+    >
+      <div class="animate_top bb ze rj ki xn vq">
+        <h2
+          x-text="sectionTitle"
+          class="fk vj pr kk wm on/5 gq/2 bb _b"
+        ></h2>
+        <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
+      </div>
+    </div>
+    <!-- Section Title End -->
+
+    <div class="bb ye ki xn vq jb jo">
+      <div class="wc qf pn xo zf iq">
+        <!-- Blog Item -->
+        <div class="animate_top sg vk rm xm">
+          <div class="c rc i z-1 pg">
+            <img class="w-full" src="images/blog-01.png" alt="Blog" />
+
+            <div class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10">
+              <a
+                href="./blog-single.html"
+                class="vc ek rg lk gh sl ml il gi hi"
+                >Read More</a
+              >
+            </div>
+          </div>
+
+          <div class="yh">
+            <div class="tc uf wf ag jq">
+              <div class="tc wf ag">
+                <img src="images/icon-man.svg" alt="User" />
+                <p>Musharof Chy</p>
+              </div>
+              <div class="tc wf ag">
+                <img src="images/icon-calender.svg" alt="Calender" />
+                <p>25 Dec, 2025</p>
+              </div>
+            </div>
+            <h4 class="ek tj ml il kk wm xl eq lb">
+              <a href="blog-single.html"
+                >Free advertising for your online business</a
+              >
+            </h4>
+          </div>
+        </div>
+
+        <!-- Blog Item -->
+        <div class="animate_top sg vk rm xm">
+          <div class="c rc i z-1 pg">
+            <img class="w-full" src="images/blog-02.png" alt="Blog" />
+
+            <div class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10">
+              <a
+                href="./blog-single.html"
+                class="vc ek rg lk gh sl ml il gi hi"
+                >Read More</a
+              >
+            </div>
+          </div>
+
+          <div class="yh">
+            <div class="tc uf wf ag jq">
+              <div class="tc wf ag">
+                <img src="images/icon-man.svg" alt="User" />
+                <p>Musharof Chy</p>
+              </div>
+              <div class="tc wf ag">
+                <img src="images/icon-calender.svg" alt="Calender" />
+                <p>25 Dec, 2025</p>
+              </div>
+            </div>
+            <h4 class="ek tj ml il kk wm xl eq lb">
+              <a href="blog-single.html"
+                >9 simple ways to improve your design skills</a
+              >
+            </h4>
+          </div>
+        </div>
+
+        <!-- Blog Item -->
+        <div class="animate_top sg vk rm xm">
+          <div class="c rc i z-1 pg">
+            <img class="w-full" src="images/blog-03.png" alt="Blog" />
+
+            <div class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10">
+              <a
+                href="./blog-single.html"
+                class="vc ek rg lk gh sl ml il gi hi"
+                >Read More</a
+              >
+            </div>
+          </div>
+
+          <div class="yh">
+            <div class="tc uf wf ag jq">
+              <div class="tc wf ag">
+                <img src="images/icon-man.svg" alt="User" />
+                <p>Musharof Chy</p>
+              </div>
+              <div class="tc wf ag">
+                <img src="images/icon-calender.svg" alt="Calender" />
+                <p>25 Dec, 2025</p>
+              </div>
+            </div>
+            <h4 class="ek tj ml il kk wm xl eq lb">
+              <a href="blog-single.html"
+                >Tips to quickly improve your coding speed.</a
+              >
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== Blog End ===== -->
+
+  <!-- ===== Contact Start ===== -->
+  <section id="support" class="i pg fh rm ji gp uq">
+    <!-- Bg Shapes -->
+    <img src="images/shape-06.svg" alt="Shape" class="h aa y" />
+    <img src="images/shape-03.svg" alt="Shape" class="h ca u" />
+    <img src="images/shape-07.svg" alt="Shape" class="h w da ee" />
+    <img src="images/shape-12.svg" alt="Shape" class="h p s" />
+    <img src="images/shape-13.svg" alt="Shape" class="h r q" />
+
+    <!-- Section Title Start -->
+    <div
+      x-data="{ sectionTitle: `Let’s Stay Connected`, sectionTitleText: `It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using.`}"
+    >
+      <div class="animate_top bb ze rj ki xn vq">
+        <h2
+          x-text="sectionTitle"
+          class="fk vj pr kk wm on/5 gq/2 bb _b"
+        ></h2>
+        <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
+      </div>
+    </div>
+    <!-- Section Title End -->
+
+    <div class="i va bb ye ki xn wq jb mo">
+      <div class="tc uf sn tf rn un zf xl:gap-10">
+        <div class="animate_top w-full mn/5 to/3 vk sg hh sm yh rq i pg">
+          <!-- Bg Shapes -->
+          <img src="images/shape-03.svg" alt="Shape" class="h la x wd" />
+          <img
+            src="images/shape-06.svg"
+            alt="Shape"
+            class="h la ma ne kf"
+          />
+
+          <div class="fb">
+            <h4 class="wj kk wm cc">Email Address</h4>
+            <p><a href="#">support@startup.com</a></p>
+          </div>
+          <div class="fb">
+            <h4 class="wj kk wm cc">Office Location</h4>
+            <p>76/A, Green valle, Califonia USA.</p>
+          </div>
+          <div class="fb">
+            <h4 class="wj kk wm cc">Phone Number</h4>
+            <p><a href="#">+009 8754 3433 223</a></p>
+          </div>
+          <div class="fb">
+            <h4 class="wj kk wm cc">Skype Email</h4>
+            <p><a href="#">example@yourmail.com</a></p>
+          </div>
+
+          <span class="rc nd rh tm lc fb"></span>
+
+          <div>
+            <h4 class="wj kk wm qb">Social Media</h4>
+            <ul class="tc wf fg">
+              <li>
+                <a href="#" class="c tc wf xf ie ld rg ml il tl">
+                  <svg
+                    class="th lm ml il"
+                    width="11"
+                    height="20"
+                    viewBox="0 0 11 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6.83366 11.3752H9.12533L10.042 7.7085H6.83366V5.87516C6.83366 4.931 6.83366 4.04183 8.667 4.04183H10.042V0.96183C9.74316 0.922413 8.61475 0.833496 7.42308 0.833496C4.93433 0.833496 3.16699 2.35241 3.16699 5.14183V7.7085H0.416992V11.3752H3.16699V19.1668H6.83366V11.3752Z"
+                      fill=""
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="c tc wf xf ie ld rg ml il tl">
+                  <svg
+                    class="th lm ml il"
+                    width="20"
+                    height="16"
+                    viewBox="0 0 20 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M19.3153 2.18484C18.6155 2.4944 17.8733 2.6977 17.1134 2.78801C17.9144 2.30899 18.5138 1.55511 18.8001 0.666844C18.0484 1.11418 17.2244 1.42768 16.3654 1.59726C15.7885 0.979958 15.0238 0.57056 14.1901 0.432713C13.3565 0.294866 12.5007 0.436294 11.7558 0.835009C11.0108 1.23372 10.4185 1.86739 10.0708 2.63749C9.72313 3.40759 9.63963 4.27098 9.83327 5.09343C8.30896 5.01703 6.81775 4.62091 5.45645 3.93079C4.09516 3.24067 2.89423 2.27197 1.93161 1.08759C1.59088 1.67284 1.41182 2.33814 1.41278 3.01534C1.41278 4.34451 2.08928 5.51876 3.11778 6.20626C2.50912 6.1871 1.91386 6.02273 1.38161 5.72685V5.77451C1.38179 6.65974 1.68811 7.51766 2.24864 8.20282C2.80916 8.88797 3.58938 9.3582 4.45703 9.53376C3.89201 9.68688 3.29956 9.70945 2.72453 9.59976C2.96915 10.3617 3.44595 11.0281 4.08815 11.5056C4.73035 11.9831 5.50581 12.2478 6.30594 12.2627C5.51072 12.8872 4.60019 13.3489 3.62642 13.6213C2.65264 13.8938 1.63473 13.9716 0.630859 13.8503C2.38325 14.9773 4.4232 15.5756 6.50669 15.5737C13.5586 15.5737 17.415 9.73176 17.415 4.66535C17.415 4.50035 17.4104 4.33351 17.4031 4.17035C18.1537 3.62783 18.8016 2.95578 19.3162 2.18576L19.3153 2.18484Z"
+                      fill=""
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="c tc wf xf ie ld rg ml il tl">
+                  <svg
+                    class="th lm ml il"
+                    width="19"
+                    height="18"
+                    viewBox="0 0 19 18"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4.36198 2.58327C4.36174 3.0695 4.16835 3.53572 3.82436 3.87937C3.48037 4.22301 3.01396 4.41593 2.52773 4.41569C2.0415 4.41545 1.57528 4.22206 1.23164 3.87807C0.887991 3.53408 0.69507 3.06767 0.695313 2.58144C0.695556 2.09521 0.888943 1.62899 1.23293 1.28535C1.57692 0.941701 2.04333 0.748781 2.52956 0.749024C3.01579 0.749267 3.48201 0.942654 3.82566 1.28664C4.1693 1.63063 4.36222 2.09704 4.36198 2.58327ZM4.41698 5.77327H0.750313V17.2499H4.41698V5.77327ZM10.2103 5.77327H6.56198V17.2499H10.1736V11.2274C10.1736 7.87244 14.5461 7.56077 14.5461 11.2274V17.2499H18.167V9.98077C18.167 4.32494 11.6953 4.53577 10.1736 7.31327L10.2103 5.77327Z"
+                      fill=""
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="c tc wf xf ie ld rg ml il tl">
+                  <svg
+                    class="th lm ml il"
+                    width="22"
+                    height="14"
+                    viewBox="0 0 22 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6.82308 0.904297C7.40883 0.904297 7.95058 0.95013 8.44558 1.0858C8.89476 1.16834 9.32351 1.33772 9.70783 1.58446C10.069 1.81088 10.3394 2.12896 10.5191 2.53688C10.6997 2.9448 10.7895 3.44438 10.7895 3.98796C10.7895 4.62321 10.6547 5.1668 10.3394 5.57471C10.069 5.98355 9.61799 6.34563 9.07716 6.61788C9.84349 6.84521 10.4292 7.25313 10.7895 7.79672C11.1507 8.34122 11.3762 9.02138 11.3762 9.7923C11.3762 10.4275 11.2405 10.9711 11.015 11.4249C10.7895 11.8786 10.4292 12.2865 10.0232 12.5588C9.58205 12.8506 9.09443 13.0651 8.58124 13.1931C8.04041 13.3297 7.49958 13.4205 6.95874 13.4205H0.916992V0.904297H6.82308ZM6.46191 5.98263C6.95783 5.98263 7.36391 5.84696 7.67924 5.62055C7.99458 5.39413 8.13024 4.9853 8.13024 4.48663C8.13024 4.21438 8.08441 3.94213 7.99458 3.76155C7.90474 3.58005 7.76908 3.44346 7.58941 3.3078C7.40883 3.21705 7.22824 3.1263 7.00274 3.08138C6.77724 3.03555 6.55266 3.03555 6.28133 3.03555H3.66699V5.98355H6.46283L6.46191 5.98263ZM6.59758 11.3341C6.86799 11.3341 7.13841 11.2883 7.36391 11.2434C7.59159 11.2001 7.80692 11.1071 7.99458 10.9711C8.17826 10.8384 8.33193 10.6685 8.44558 10.4725C8.53541 10.246 8.62616 9.9738 8.62616 9.65663C8.62616 9.02138 8.44558 8.56763 8.08533 8.25046C7.72416 7.97822 7.22824 7.84255 6.64249 7.84255H3.66699V11.335H6.59758V11.3341ZM15.2986 11.2883C15.6588 11.6513 16.1997 11.8328 16.9211 11.8328C17.417 11.8328 17.868 11.6971 18.2282 11.4707C18.5894 11.1985 18.8149 10.9262 18.9047 10.654H21.1139C20.7527 11.742 20.2119 12.513 19.4914 13.0116C18.7691 13.4654 17.9129 13.7376 16.8762 13.7376C16.2128 13.7396 15.5551 13.6165 14.9374 13.3746C14.3816 13.1661 13.886 12.8235 13.4946 12.3773C13.0759 11.9598 12.7665 11.4457 12.5935 10.8804C12.368 10.291 12.2772 9.65663 12.2772 8.93063C12.2772 8.25047 12.368 7.61613 12.5935 7.0258C12.8103 6.45755 13.1311 5.93468 13.5395 5.48396C13.9456 5.07605 14.4415 4.71396 14.9823 4.48663C15.5843 4.24469 16.2274 4.12143 16.8762 4.12363C17.6425 4.12363 18.319 4.26021 18.9047 4.57738C19.4914 4.89455 19.9415 5.25755 20.3027 5.80205C20.6711 6.32503 20.9456 6.90819 21.1139 7.52538C21.2037 8.15972 21.2487 8.79497 21.2037 9.52005H14.667C14.667 10.246 14.9374 10.9262 15.2986 11.2892V11.2883ZM18.1384 6.52713C17.8231 6.20996 17.3272 6.02846 16.7405 6.02846C16.3353 6.02846 16.0191 6.11922 15.7487 6.25488C15.4782 6.39147 15.2986 6.57297 15.118 6.75447C14.952 6.92978 14.8422 7.15067 14.8027 7.3888C14.7568 7.61613 14.7119 7.79672 14.7119 7.97822H18.7691C18.6792 7.29805 18.4537 6.84522 18.1384 6.52713ZM14.1711 1.76596H19.2201V2.99063H14.172V1.76596H14.1711Z"
+                      fill=""
+                    />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="animate_top w-full nn/5 vo/3 vk sg hh sm yh tq">
+          <form
+            action="https://formbold.com/s/unique_form_id"
+            method="POST"
+          >
+            <div class="tc sf yo ap zf ep qb">
+              <div class="vd to/2">
+                <label class="rc ac" for="fullname">Full name</label>
+                <input
+                  type="text"
+                  name="fullname"
+                  id="fullname"
+                  placeholder="Devid Wonder"
+                  class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 xi mi"
+                />
+              </div>
+
+              <div class="vd to/2">
+                <label class="rc ac" for="email">Email address</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="example@gmail.com"
+                  class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 xi mi"
+                />
+              </div>
+            </div>
+
+            <div class="tc sf yo ap zf ep qb">
+              <div class="vd to/2">
+                <label class="rc ac" for="phone">Phone number</label>
+                <input
+                  type="text"
+                  name="phone"
+                  id="phone"
+                  placeholder="+009 3342 3432"
+                  class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 xi mi"
+                />
+              </div>
+
+              <div class="vd to/2">
+                <label class="rc ac" for="subject">Subject</label>
+                <input
+                  type="text"
+                  for="subject"
+                  id="subject"
+                  placeholder="Type your subject"
+                  class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 xi mi"
+                />
+              </div>
+            </div>
+
+            <div class="fb">
+              <label class="rc ac" for="message">Message</label>
+              <textarea
+                placeholder="Message"
+                rows="4"
+                name="message"
+                id="message"
+                class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 ci"
+              ></textarea>
+            </div>
+
+            <div class="tc xf">
+              <button class="vc rg lk gh ml il hi gi _l">
+                Send Message
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== Contact End ===== -->
+
+  <!-- ===== CTA Start ===== -->
+  <section class="i pg gh ji">
+    <!-- Bg Shape -->
+    <img class="h p q" src="images/shape-16.svg" alt="Bg Shape" />
+
+    <div class="bb ye i z-10 ki xn dr">
+      <div class="tc uf sn tn un gg">
+        <div class="animate_left to/2">
+          <h2 class="fk vj zp pr lk ac">
+            Join with 5000+ Startups Growing with Base.
+          </h2>
+          <p class="lk">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            quis nibh lorem. Duis sed odio lorem. In a efficitur leo. Ut
+            venenatis rhoncus.
+          </p>
+        </div>
+        <div class="animate_right bf">
+          <a href="#" class="vc ek kk hh rg ol il cm gi hi">
+            Get Started Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  @section('footer')
+  @include('layouts.footer')
+@endsection
