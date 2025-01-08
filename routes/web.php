@@ -9,3 +9,4 @@ Route::get('/', function () {
 
 Route::get('/blog', [BlogController::class, 'index']);
 Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
+

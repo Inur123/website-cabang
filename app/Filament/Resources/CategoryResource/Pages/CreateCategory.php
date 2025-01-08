@@ -2,15 +2,12 @@
 
 namespace App\Filament\Resources\CategoryResource\Pages;
 
-use App\Filament\Resources\CategoryResource;
 use Filament\Pages\Actions;
-use Filament\Resources\Pages\CreateRecord;
 use Illuminate\Http\RedirectResponse;
-
-class CreateCategory extends CreateRecord
+use Filament\Resources\Pages\CreateRecord;
+use App\Filament\Resources\CategoryResource;
+use App\Filament\CreateRecordAndRedirectToIndex;
+class CreateCategory extends CreateRecordAndRedirectToIndex
 {
     protected static string $resource = CategoryResource::class;
-
-    // Override method afterCreate untuk redirect ke halaman index
-
 }

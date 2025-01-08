@@ -16,4 +16,9 @@ class EditCategory extends EditRecord
             Actions\DeleteAction::make(),
         ];
     }
+
+    protected function getRedirectUrl(): ?string
+    {
+        return static::$resource::getUrl('index'); // Use getUrl instead of generateUrl
+    }
 }

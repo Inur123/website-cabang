@@ -29,7 +29,7 @@ class CategoryResource extends Resource
                     ->required()
                     ->reactive()
                     ->afterStateUpdated(function ($state, callable $set) {
-                        $set('slug', Str::slug($state)); // Membuat slug otomatis
+                        $set('slug', Str::slug($state)); // Membuat slug otomatis setiap kali `name` berubah
                     }),
 
                 // Field untuk Slug
@@ -37,7 +37,8 @@ class CategoryResource extends Resource
                     ->label('Slug')
                     ->required()
                     ->unique(Category::class, 'slug') // Slug harus unik
-                    ->disabled(), // Nonaktifkan input manual
+                    ->disabled() // Nonaktifkan input manual
+                    ->dehydrated(fn ($state) => !empty($state)), // Pastikan slug disimpan ke database meskipun disabled
             ]);
     }
 
@@ -68,11 +69,9 @@ class CategoryResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
-                 // Aksi Edit
             ])
-
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(), // Aksi Hapus Banyak
+                Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
 
@@ -92,5 +91,4 @@ class CategoryResource extends Resource
             'edit' => Pages\EditCategory::route('/{record}/edit'), // Mengarahkan ke halaman edit kategori
         ];
     }
-
 }
