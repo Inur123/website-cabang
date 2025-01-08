@@ -60,28 +60,31 @@
           <div class="lg:col-span-1">
             <!-- Categories -->
             <div class="mb-12">
-                <h2 class="text-2xl font-bold mb-4">Categories</h2>
+                <h2 class="text-2xl font-bold mb-4 ">Categories</h2>
 
                 <!-- Initially show first 10 categories -->
-                <ul class="space-y-2" id="category-list-limited">
-                  @foreach($categories as $category)
+                <ul class="space-y-2 mt-4" id="category-list-limited">  <!-- Increased space between items -->
+                  @foreach($categories->take(10) as $category)
                     <li class="text-gray-600">{{ $category->name }}</li>
                   @endforeach
                 </ul>
 
-                <!-- Initially hidden full category list -->
-                <ul class="space-y-2 hidden" id="category-list-all">
-                  @foreach($categories as $category)
+                <!-- Initially hidden full category list (categories 11 and onward) -->
+                <ul class="space-y-2 hidden mt-2"  id="category-list-all"> <!-- Increased space here as well -->
+                  @foreach($categories->skip(10) as $category)
                     <li class="text-gray-600">{{ $category->name }}</li>
                   @endforeach
                 </ul>
 
                 <!-- Button to toggle full category list -->
                 @if($totalCategoriesCount > 10)
-                  <button id="see-more-btn" class="text-blue-600 hover:underline mt-4">See More</button>
-                  <button id="see-less-btn" class="text-blue-600 hover:underline mt-4 hidden">Show Less</button>
+                  <button id="see-more-btn" class="text-blue-600 hover:underline mt-2">See More</button>
+                  <button id="see-less-btn" class="text-blue-600 hover:underline mt-2 hidden">Show Less</button>
                 @endif
               </div>
+
+
+
 
 
             <!-- Most Popular Posts -->
@@ -111,23 +114,21 @@
 
     <script>
         // Get the buttons and category lists
-        const seeMoreBtn = document.getElementById('see-more-btn');
-        const seeLessBtn = document.getElementById('see-less-btn');
-        const categoryListLimited = document.getElementById('category-list-limited');
-        const categoryListAll = document.getElementById('category-list-all');
+        document.getElementById('see-more-btn').addEventListener('click', function() {
+  // Show the full category list
+  document.getElementById('category-list-all').classList.remove('hidden');
+  // Hide the 'See More' button and show the 'Show Less' button
+  document.getElementById('see-more-btn').classList.add('hidden');
+  document.getElementById('see-less-btn').classList.remove('hidden');
+});
 
-        // Show all categories when "See More" is clicked
-        seeMoreBtn.addEventListener('click', function() {
-          categoryListAll.classList.remove('hidden'); // Show full category list
-          seeMoreBtn.classList.add('hidden'); // Hide the "See More" button
-          seeLessBtn.classList.remove('hidden'); // Show the "Show Less" button
-        });
+document.getElementById('see-less-btn').addEventListener('click', function() {
+  // Hide the full category list
+  document.getElementById('category-list-all').classList.add('hidden');
+  // Show the 'See More' button and hide the 'Show Less' button
+  document.getElementById('see-more-btn').classList.remove('hidden');
+  document.getElementById('see-less-btn').classList.add('hidden');
+});
 
-        // Collapse the category list back to 10 when "Show Less" is clicked
-        seeLessBtn.addEventListener('click', function() {
-          categoryListAll.classList.add('hidden'); // Hide the full category list
-          seeMoreBtn.classList.remove('hidden'); // Show the "See More" button
-          seeLessBtn.classList.add('hidden'); // Hide the "Show Less" button
-        });
     </script>
 @include('layouts.footer')

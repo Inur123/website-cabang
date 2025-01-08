@@ -31,7 +31,7 @@ public function index()
 
 public function show($slug)
 {
-    $categories = Category::take(10)->get();
+    $categories = Category::all();
     $totalCategoriesCount = Category::count();
     // Ambil postingan berdasarkan slug
     $post = Post::where('slug', $slug)->where('is_published', 1)->firstOrFail();

@@ -14,11 +14,11 @@ class="flex items-center justify-between px-6 py-4 border-b dark:border-gray-700
     class="hidden md:flex flex-col md:flex-row md:space-x-8 absolute md:static top-16 left-0 w-full bg-white dark:bg-gray-800 md:w-auto md:bg-transparent shadow-md md:shadow-none">
     <a href="/" class="{{ request()->is('/') ? 'text-blue-600 dark:text-blue-400 font-bold' : 'text-gray-600 dark:text-gray-300' }} block p-4 md:p-0">Home</a>
     <a href="/blog" class="{{ request()->is('blog*') ? 'text-blue-600 dark:text-blue-400 font-bold' : 'text-gray-600 dark:text-gray-300' }} block p-4 md:p-0">Blog</a>
-    <a href="detail-blog.html" class="block text-gray-600 dark:text-gray-300 p-4 md:p-0 flex items-center">
+    {{-- <a href="detail-blog.html" class="block text-gray-600 dark:text-gray-300 p-4 md:p-0 flex items-center">
         Pages
         <i class="fas fa-arrow-right ml-1"></i>
-    </a>
-    <a href="#" class="block text-gray-600 dark:text-gray-300 p-4 md:p-0">Support</a>
+    </a> --}}
+
 </div>
 
 <div class="flex gap-3">
