@@ -3,79 +3,61 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PC IPNU IPPNU MAGETAN</title>
-    <link rel="icon" href="favicon.ico">
-    <link href="{{ asset('template-blog/style.css') }}" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 </head>
 
-<body x-data="{ page: 'home', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }" x-init="darkMode = JSON.parse(localStorage.getItem('darkMode'));
-$watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))" :class="{ 'b eh': darkMode === true }">
-    <!-- ===== Header Start ===== -->
+<body class="min-h-screen bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100">
+    <!-- <div id="banner" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 flex justify-center items-center">
+    <div class="relative w-full h-full">
 
-    @include('layouts.header')
-    <!-- ===== Header End ===== -->
+        <img src="images/banner-1.png" alt="Banner Mobile" class="  block w-full h-full object-cover md:hidden rounded-lg ">
 
-    <main>
-        <!-- ===== Hero Start ===== -->
+        <img src="images/banner-2.png" alt="Banner Desktop" class="hidden md:block w-full h-full object-cover">
+
+
+        <button id="closeBanner" class="absolute top-0 right-4 text-black text-4xl font-bold">
+            &times;
+        </button>
+    </div>
+  </div> -->
+
+    <div class="">
+        <!-- Navigation -->
+
+        <!-- Hero Section -->
         @yield('content')
-        <!-- ===== CTA End ===== -->
-    </main>
-    <!-- ===== Footer Start ===== -->
-    @yield('footer')
-
-    <!-- ===== Footer End ===== -->
-
-    <!-- ====== Back To Top Start ===== -->
-    <button class="xc wf xf ie ld vg sr gh tr g sa ta _a" @click="window.scrollTo({top: 0, behavior: 'smooth'})"
-        @scroll.window="scrollTop = (window.pageYOffset > 50) ? true : false" :class="{ 'uc': scrollTop }">
-        <svg class="uh se qd" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-            <path
-                d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z" />
+    </div>
+    <button id="scrollToTop"
+        class="fixed bottom-5 right-5 bg-blue-400 text-white p-4 text-xl rounded-lg shadow-md hidden focus:outline-none dark:bg-blue-600 dark:text-gray-200">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+            <path fill-rule="evenodd"
+                d="M11.47 2.47a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06l-6.22-6.22V21a.75.75 0 0 1-1.5 0V4.81l-6.22 6.22a.75.75 0 1 1-1.06-1.06l7.5-7.5Z"
+                clip-rule="evenodd" />
         </svg>
     </button>
+    <!--
+  Heads up! 👋
 
-    <!-- ====== Back To Top End ===== -->
+  This component comes with some `rtl` classes. Please remove them if they are not needed in your project.
+-->
 
+    @yield('footer')
+
+    <!-- kegiatan -->
+
+    <!-- FontAwesome script (for icons) -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="{{ asset('template/script.js') }}"></script>
     <script>
-        //  Pricing Table
-        const setup = () => {
-            return {
-                isNavOpen: false,
-
-                billPlan: 'monthly',
-
-                plans: [{
-                        name: 'Starter',
-                        price: {
-                            monthly: 29,
-                            annually: 29 * 12 - 199,
-                        },
-                        features: ['400 GB Storaget', 'Unlimited Photos & Videos', 'Exclusive Support'],
-                    },
-                    {
-                        name: 'Growth Plan',
-                        price: {
-                            monthly: 59,
-                            annually: 59 * 12 - 100,
-                        },
-                        features: ['400 GB Storaget', 'Unlimited Photos & Videos', 'Exclusive Support'],
-                    },
-                    {
-                        name: 'Business',
-                        price: {
-                            monthly: 139,
-                            annually: 139 * 12 - 100,
-                        },
-                        features: ['400 GB Storaget', 'Unlimited Photos & Videos', 'Exclusive Support'],
-                    },
-                ],
-            };
-        };
+        AOS.init({
+            duration: 1000,
+            offset: 100,
+        });
     </script>
-    <script defer src="{{ asset('template-blog/bundle.js') }}"></script>
 </body>
 
 </html>

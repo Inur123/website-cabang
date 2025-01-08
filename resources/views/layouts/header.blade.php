@@ -1,89 +1,56 @@
-<header class="g s r vd ya cj" :class="{ 'hh sm _k dj bl ll': stickyMenu }"
-    @scroll.window="stickyMenu = (window.pageYOffset > 20) ? true : false">
-    <div class="bb ze ki xn 2xl:ud-px-0 oo wf yf i">
-        <div class="vd to/4 tc wf yf">
-            <a href="index.html">
-                <img class="om" src="{{ asset('template-blog/images/logo-light.svg') }}" alt="Logo Light" />
-                <img class="xc nm" src="{{ asset('template-blog/images/logo-dark.svg') }}" alt="Logo Dark" />
-            </a>
-
-            <!-- Hamburger Toggle BTN -->
-            <button class="po rc" @click="navigationOpen = !navigationOpen">
-                <span class="rc i pf re pd">
-                    <span class="du-block h q vd yc">
-                        <span class="rc i r s eh um tg te rd eb ml jl dl" :class="{ 'ue el': !navigationOpen }"></span>
-                        <span class="rc i r s eh um tg te rd eb ml jl fl" :class="{ 'ue qr': !navigationOpen }"></span>
-                        <span class="rc i r s eh um tg te rd eb ml jl gl" :class="{ 'ue hl': !navigationOpen }"></span>
-                    </span>
-                    <span class="du-block h q vd yc lf">
-                        <span class="rc eh um tg ml jl el h na r ve yc" :class="{ 'sd dl': !navigationOpen }"></span>
-                        <span class="rc eh um tg ml jl qr h s pa vd rd" :class="{ 'sd rr': !navigationOpen }"></span>
-                    </span>
-                </span>
-            </button>
-            <!-- Hamburger Toggle BTN -->
-        </div>
-
-        <div class="vd wo/4 sd qo f ho oo wf yf" :class="{ 'd hh rm sr td ud qg ug jc yh': navigationOpen }">
-            <nav>
-                <ul class="tc _o sf yo cg ep">
-                    <li>
-                        <a href="/" class="xl {{ Request::is('/') ? 'mk' : '' }}">Home</a>
-                    </li>
-                    <li>
-                        <a href="/blog" class="xl {{ Request::is('blog*') ? 'mk' : '' }}">Blog</a>
-                    </li>
-                    <li>
-                        <a href="index.html#features" class="xl">Features</a>
-                    </li>
-                    <li class="c i" x-data="{ dropdown: false }">
-                        <a href="#" class="xl tc wf yf bg" @click.prevent="dropdown = !dropdown"
-                            :class="{
-                                'mk': dropdown
-                            }">
-                            Pages
-                            <svg :class="{ 'wh': dropdown }" class="th mm we fd pf" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 512 512">
-                                <path
-                                    d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
-                            </svg>
-                        </a>
-
-                        <!-- Dropdown Start -->
-                        <ul class="a" :class="{ 'tc': dropdown }">
-                            <li><a href="blog-grid.html" class="xl">Blog Grid</a></li>
-                            <li><a href="blog-single.html" class="xl">Blog Single</a></li>
-                            <li><a href="signin.html" class="xl">Sign In</a></li>
-                            <li><a href="signup.html" class="xl">Sign Up</a></li>
-                            <li><a href="404.html" class="xl">404</a></li>
-                        </ul>
-                        <!-- Dropdown End -->
-                    </li>
-                    <li>
-                        <a href="index.html#support" class="xl">Support</a>
-                    </li>
-                </ul>
-            </nav>
-
-
-            <div class="tc wf ig pb no">
-                <div class="pc h io pa ra" :class="navigationOpen ? '!-ud-visible' : 'd'">
-                    <label class="rc ab i">
-                        <input type="checkbox" :value="darkMode" @change="darkMode = !darkMode"
-                            class="pf vd yc uk h r za ab" />
-                        <!-- Icon Sun -->
-                        <svg :class="{ 'wn': page === 'home', 'xh': page === 'home' && stickyMenu }"
-                            class="th om" width="25" height="25" viewBox="0 0 25 25" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M12.0908 18.6363C10.3549 18.6363 8.69 17.9467 7.46249 16.7192C6.23497 15.4916 5.54537 13.8268 5.54537 12.0908C5.54537 10.3549 6.23497 8.69 7.46249 7.46249C8.69 6.23497 10.3549 5.54537 12.0908 5.54537C13.8268 5.54537 15.4916 6.23497 16.7192 7.46249C17.9467 8.69 18.6363 10.3549 18.6363 12.0908C18.6363 13.8268 17.9467 15.4916 16.7192 16.7192C15.4916 17.9467 13.8268 18.6363 12.0908 18.6363ZM12.0908 16.4545C13.2481 16.4545 14.358 15.9947 15.1764 15.1764C15.9947 14.358 16.4545 13.2481 16.4545 12.0908C16.4545 10.9335 15.9947 9.8236 15.1764 9.00526C14.358 8.18692 13.2481 7.72718 12.0908 7.72718C10.9335 7.72718 9.8236 8.18692 9.00526 9.00526C8.18692 9.8236 7.72718 10.9335 7.72718 12.0908C7.72718 13.2481 8.18692 14.358 9.00526 15.1764C9.8236 15.9947 10.9335 16.4545 12.0908 16.4545ZM10.9999 0.0908203H13.1817V3.36355H10.9999V0.0908203ZM10.9999 20.8181H13.1817V24.0908H10.9999V20.8181ZM2.83446 4.377L4.377 2.83446L6.69082 5.14828L5.14828 6.69082L2.83446 4.37809V4.377ZM17.4908 19.0334L19.0334 17.4908L21.3472 19.8046L19.8046 21.3472L17.4908 19.0334ZM19.8046 2.83337L21.3472 4.377L19.0334 6.69082L17.4908 5.14828L19.8046 2.83446V2.83337ZM5.14828 17.4908L6.69082 19.0334L4.377 21.3472L2.83446 19.8046L5.14828 17.4908ZM24.0908 10.9999V13.1817H20.8181V10.9999H24.0908ZM3.36355 10.9999V13.1817H0.0908203V10.9999H3.36355Z"
-                                fill="currentColor" />
-                        </svg>
-                        <!-- Icon Sun -->
-                        <img class="xc nm" src="{{ asset('template-blog/images/icon-moon.svg') }}" alt="Moon" />
-                    </label>
-                </div>
-            </div>
-        </div>
+<nav id="popup"
+class="flex items-center justify-between px-6 py-4 border-b dark:border-gray-700 sticky top-0 z-10 bg-white dark:bg-gray-800">
+<div class="flex items-center space-x-2">
+    <!-- Logo tampil di mobile dan desktop -->
+    <div class="p-2 rounded-lg">
+        <img src="{{ asset('template/images/logo-2.svg') }}" alt="" class="w-10 h-10 filter invert dark:invert-0">
     </div>
-</header>
+
+    <!-- Teks hanya tampil di desktop -->
+    <span class="text-xl font-bold hidden md:block">Ipnu Ippnu</span>
+</div>
+<!-- Menu Links (hidden on mobile, shown on larger screens) -->
+<div id="menu"
+    class="hidden md:flex flex-col md:flex-row md:space-x-8 absolute md:static top-16 left-0 w-full bg-white dark:bg-gray-800 md:w-auto md:bg-transparent shadow-md md:shadow-none">
+    <a href="/" class="{{ request()->is('/') ? 'text-blue-600 dark:text-blue-400 font-bold' : 'text-gray-600 dark:text-gray-300' }} block p-4 md:p-0">Home</a>
+    <a href="/blog" class="{{ request()->is('blog*') ? 'text-blue-600 dark:text-blue-400 font-bold' : 'text-gray-600 dark:text-gray-300' }} block p-4 md:p-0">Blog</a>
+    <a href="detail-blog.html" class="block text-gray-600 dark:text-gray-300 p-4 md:p-0 flex items-center">
+        Pages
+        <i class="fas fa-arrow-right ml-1"></i>
+    </a>
+    <a href="#" class="block text-gray-600 dark:text-gray-300 p-4 md:p-0">Support</a>
+</div>
+
+<div class="flex gap-3">
+    <div class="flex items-center space-x-4">
+        <!-- Dark Mode Toggle Button -->
+        <button id="darkModeToggle" onclick="toggleDarkMode()"
+            class="p-2 rounded-full bg-gray-100 dark:bg-gray-800">
+            <span class="sr-only">Toggle theme</span>
+            <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+            </svg>
+            <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor" class="size-6 hidden">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+            </svg>
+        </button>
+    </div>
+    <div class="md:hidden flex items-center">
+        <button id="menuToggle" onclick="toggleMenu()" class="text-gray-600 dark:text-gray-300">
+            <svg id="hamburgerIcon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg id="closeIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor" class="size-6 hidden">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+    </div>
+</div>
+</nav>

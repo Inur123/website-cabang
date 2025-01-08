@@ -67,8 +67,10 @@ class CategoryResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(), // Aksi Edit
+                Tables\Actions\DeleteAction::make(),
+                 // Aksi Edit
             ])
+
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(), // Aksi Hapus Banyak
             ]);
@@ -90,4 +92,5 @@ class CategoryResource extends Resource
             'edit' => Pages\EditCategory::route('/{record}/edit'), // Mengarahkan ke halaman edit kategori
         ];
     }
+
 }

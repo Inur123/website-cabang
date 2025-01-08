@@ -17,7 +17,8 @@ public function index()
 
     // Mengonversi 'published_at' ke objek Carbon jika diperlukan
     foreach ($posts as $post) {
-        $post->published_at = Carbon::parse($post->published_at); // Pastikan menjadi objek Carbon
+        $post->published_at = Carbon::parse($post->published_at);
+        $post->excerpt = Str::limit($post->content, 100); // Pastikan menjadi objek Carbon
     }
 
     foreach ($posts as $post) {
@@ -30,8 +31,8 @@ public function index()
 
 public function show($slug)
 {
-    $categories = Category::all();
-
+    $categories = Category::take(10)->get();
+    $totalCategoriesCount = Category::count();
     // Ambil postingan berdasarkan slug
     $post = Post::where('slug', $slug)->where('is_published', 1)->firstOrFail();
 
@@ -51,7 +52,7 @@ public function show($slug)
         ->limit(5)  // Limit to the top 5 posts
         ->get();
 
-    return view('blog.detail', compact('post', 'categories', 'relatedPosts', 'popularPosts'));
+    return view('blog.detail', compact('post', 'categories','totalCategoriesCount', 'relatedPosts', 'popularPosts'));
 }
 
 

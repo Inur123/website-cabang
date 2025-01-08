@@ -1,118 +1,133 @@
 @extends('layouts.app')
-<!-- ===== Header Start ===== -->
 
-@section('header')
+
+
     @include('layouts.header')
-@endsection
 
-<section class="gj qp gr hj rp hr">
-    <div class="bb ze ki xn 2xl:ud-px-0">
-        <div class="tc sf yo zf kq">
-            <div class="ro">
-                <div
-                    class="animate_top rounded-md shadow-solid-13 bg-white dark:bg-blacksection border border-stroke dark:border-strokedark p-7.5 md:p-10">
-                    <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="Blog" class="w-full rounded-lg" style="border-radius: 15px" />
+    <div class="container mx-auto px-6 py-12">
+        <div class="grid lg:grid-cols-3 gap-12">
+          <!-- Main Content -->
+          <div class="lg:col-span-2">
+            <article>
+              <div class="relative h-[400px] rounded-lg overflow-hidden mb-8">
+                <img
+                  src="{{ asset('storage/' . $post->thumbnail) }}"
+                  alt="Featured image"
+                  class="object-cover w-full h-full"
+                />
+              </div>
 
+              <h1 class="text-4xl font-bold mb-6">{{ $post->title }}</h1>
 
-                    <h2 class="ek vj 2xl:ud-text-title-lg kk wm nb gb">{{ $post->title }}</h2>
-
-                    <ul class="tc uf cg 2xl:ud-gap-15 fb">
-                        <li><span class="rc kk wm">Author: </span>{{ $post->user->name }}</li>
-                        <li><span class="rc kk wm">Published On: </span>{{ $post->published_at->format('d M Y') }}</li>
-                        <li><span class="rc kk wm">Category: </span> {{ $post->category->name }}</li>
-                    </ul>
-
-                    <p >
-                        {!! $post->content !!}
-                    </p>
-                    <div style="margin-top: 20px; display: flex; align-items: center;">
-                        <p class="sj kk wm tb" style="margin-right: 15px;">Share this Post:</p>
-                        <ul class="flex space-x-4">
-                            <!-- WhatsApp Share -->
-                            <li>
-                                <a href="https://wa.me/?text={{ urlencode(url()->current()) }}"
-                                   style="transition: opacity 0.3s ease;"
-                                   target="_blank"
-                                   onmouseover="this.style.opacity='0.7'"
-                                   onmouseout="this.style.opacity='1'">
-                                    <img src="{{ asset('template-blog/images/wa.png') }}"
-                                         alt="Share on WhatsApp"
-                                         width="24" height="24"
-                                         style="max-width: 100%; height: auto;"/>
-                                </a>
-                            </li>
-                            <!-- Add more sharing options as needed, e.g., Facebook, Twitter, etc. -->
-                        </ul>
-                    </div>
-
-
-
+              <div class="flex flex-wrap gap-6 text-gray-600 mb-8">
+                <div class="flex flex-col items-start gap-1">
+                  <span>Author:</span>
+                  <span class="font-medium">{{ $post->user->name }}</span>
 
                 </div>
-            </div>
-
-            <div class="jn/2 so">
-                <div class="animate_top fb">
-                    <form action="#">
-                        <div class="i">
-                            <input type="text" placeholder="Search Here..."
-                                class="vd sm _g ch pm vk xm rg gm dm/40 dn/40 li mi" />
-
-                            <button class="h r q _h">
-                                <svg class="th ul ml il" width="21" height="21" viewBox="0 0 21 21"
-                                    fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M16.031 14.617L20.314 18.899L18.899 20.314L14.617 16.031C13.0237 17.3082 11.042 18.0029 9 18C4.032 18 0 13.968 0 9C0 4.032 4.032 0 9 0C13.968 0 18 4.032 18 9C18.0029 11.042 17.3082 13.0237 16.031 14.617ZM14.025 13.875C15.2941 12.5699 16.0029 10.8204 16 9C16 5.132 12.867 2 9 2C5.132 2 2 5.132 2 9C2 12.867 5.132 16 9 16C10.8204 16.0029 12.5699 15.2941 13.875 14.025L14.025 13.875Z" />
-                                </svg>
-                            </button>
-                        </div>
-                    </form>
+                <div class="flex flex-col items-start gap-1">
+                  <span>Published On:</span>
+                  <span class="font-medium">{{ $post->published_at->format('d M Y') }}</span>
                 </div>
-
-                <div class="animate_top fb">
-                    <h4 class="tj kk wm qb">Categories</h4>
-
-                    <ul>
-                        @foreach($categories as $category)
-                        <li class="ql vb du-ease-in-out il xl">
-                            <a href="#">{{ $category->name }}</a> <!-- Ganti 'name' dengan field yang sesuai -->
-                        </li>
-                        @endforeach
-                    </ul>
+                <div class="flex flex-col items-start gap-1">
+                  <span>Category</span>
+                  <span class="font-medium">{{ $post->category->name }}</span>
                 </div>
+              </div>
 
-                <div class="animate_top">
-                    <h4 class="tj kk wm qb">Most Popular Post</h4>
+              <div class="prose max-w-none">
+                <p class="text-justify">
+                    {!! $post->content !!}
+                </p>
+              </div>
 
-                    <div>
-                        @foreach ($popularPosts as $popularPost)
-                        <div class="tc fg 2xl:ud-gap-6 qb">
-                            <img src="{{ asset('storage/' . $popularPost->thumbnail) }}" alt="Blog" style="width: 90px; height:78px; border-radius: 10px" />
-                            <h5 class="wj kk wm xl bn ml il">
-                                <a href="{{ route('blog.show', $popularPost->slug) }}">
-                                    {{ \Illuminate\Support\Str::limit($popularPost->title, 45, '...') }}
-                                </a>
-                            </h5>
-                        </div>
-                        @endforeach
-                    </div>
-                </div>
-                {{-- <div class="animate_top">
-                    <h4 class="tj kk wm qb">Related Posts</h4>
-                    <div>
-                        @if($popularPost)
-                      <div class="tc fg 2xl:ud-gap-6 qb">
-                        <img src="images/blog-small-01.png" alt="Blog" />
-                        <h5 class="wj kk wm xl bn ml il">
-                          <a href="#">Free advertising for your online business</a>
-                        </h5>
-                      </div>
+              <div class="mt-8 pt-8 border-t">
+                <div class="flex items-center gap-2">
+                  <span>Share this Post:</span>
+                  <div class="inline-flex items-center gap-4 text-green-600">
+                    <!-- WhatsApp Image -->
+                    <a href="https://wa.me/?text={{ urlencode(url()->current()) }}" target="_blank">
+                      <img src="{{ asset('template/images/wa.png') }}" alt="WhatsApp" class="w-10 h-10">
+                    </a>
                   </div>
-                  @endif
-                </div> --}}
+                </div>
+              </div>
+
+            </article>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="lg:col-span-1">
+            <!-- Categories -->
+            <div class="mb-12">
+                <h2 class="text-2xl font-bold mb-4">Categories</h2>
+
+                <!-- Initially show first 10 categories -->
+                <ul class="space-y-2" id="category-list-limited">
+                  @foreach($categories as $category)
+                    <li class="text-gray-600">{{ $category->name }}</li>
+                  @endforeach
+                </ul>
+
+                <!-- Initially hidden full category list -->
+                <ul class="space-y-2 hidden" id="category-list-all">
+                  @foreach($categories as $category)
+                    <li class="text-gray-600">{{ $category->name }}</li>
+                  @endforeach
+                </ul>
+
+                <!-- Button to toggle full category list -->
+                @if($totalCategoriesCount > 10)
+                  <button id="see-more-btn" class="text-blue-600 hover:underline mt-4">See More</button>
+                  <button id="see-less-btn" class="text-blue-600 hover:underline mt-4 hidden">Show Less</button>
+                @endif
+              </div>
+
+
+            <!-- Most Popular Posts -->
+            <div>
+              <h2 class="text-2xl font-bold mb-4">Most Popular Post</h2>
+              <div class="space-y-4">
+                @foreach ($popularPosts as $popularPost)
+                <a href="{{ route('blog.show', $popularPost->slug) }}" class="flex items-center gap-4" >
+                  <div class="relative w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+                    <img
+                      src="{{ asset('storage/' . $popularPost->thumbnail) }}"
+                      alt="templates for class names, generatin"
+                      class="object-cover w-full h-full"
+
+                    />
+                  </div>
+                  <h3 class="font-medium text-gray-600">
+                    {{ \Illuminate\Support\Str::limit($popularPost->title, 45, '...') }}
+                  </h3>
+                </a>
+                @endforeach
+              </div>
+            </div>
+          </div>
         </div>
     </div>
-</section>
-@section('footer')
+
+    <script>
+        // Get the buttons and category lists
+        const seeMoreBtn = document.getElementById('see-more-btn');
+        const seeLessBtn = document.getElementById('see-less-btn');
+        const categoryListLimited = document.getElementById('category-list-limited');
+        const categoryListAll = document.getElementById('category-list-all');
+
+        // Show all categories when "See More" is clicked
+        seeMoreBtn.addEventListener('click', function() {
+          categoryListAll.classList.remove('hidden'); // Show full category list
+          seeMoreBtn.classList.add('hidden'); // Hide the "See More" button
+          seeLessBtn.classList.remove('hidden'); // Show the "Show Less" button
+        });
+
+        // Collapse the category list back to 10 when "Show Less" is clicked
+        seeLessBtn.addEventListener('click', function() {
+          categoryListAll.classList.add('hidden'); // Hide the full category list
+          seeMoreBtn.classList.remove('hidden'); // Show the "See More" button
+          seeLessBtn.classList.add('hidden'); // Hide the "Show Less" button
+        });
+    </script>
 @include('layouts.footer')
-@endsection
