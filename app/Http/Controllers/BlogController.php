@@ -13,7 +13,9 @@ class BlogController extends Controller
 
 public function index()
 {
-    $posts = Post::where('is_published', 1)->get();
+    $posts = Post::where('is_published', 1)
+    ->orderBy('published_at', 'desc') // Order by published date
+    ->paginate(9);
 
     // Mengonversi 'published_at' ke objek Carbon jika diperlukan
     foreach ($posts as $post) {

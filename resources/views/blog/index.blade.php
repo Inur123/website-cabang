@@ -37,5 +37,8 @@
           </article>
 @endforeach
         </div>
+        <div class="mt-8">
+            {{ $posts->links() }} <!-- This will render pagination links -->
+        </div>
     </div>
 @include('layouts.footer')
