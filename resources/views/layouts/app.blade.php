@@ -60,6 +60,34 @@
             once: true,
         });
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const profileBtn = document.getElementById('profileBtn');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+    const arrowIcon = document.getElementById('arrowIcon');
+
+    if (profileBtn && dropdownMenu && arrowIcon) {
+        // Toggle dropdown on profile button click
+        profileBtn.addEventListener('click', function(event) {
+            event.stopPropagation(); // Prevent the click from closing the dropdown immediately
+
+            // Toggle dropdown visibility
+            dropdownMenu.classList.toggle('hidden');
+            // Rotate the arrow icon
+            arrowIcon.classList.toggle('rotate-180');
+        });
+
+        // Close dropdown if clicked outside
+        window.addEventListener('click', function(event) {
+            // Close dropdown if the click is outside the profile button and dropdown
+            if (!profileBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                dropdownMenu.classList.add('hidden');
+                arrowIcon.classList.remove('rotate-180');
+            }
+        });
+    }
+});
+    </script>
 </body>
 
 </html>
