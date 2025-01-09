@@ -78,8 +78,8 @@
 
                 <!-- Button to toggle full category list -->
                 @if($totalCategoriesCount > 10)
-                  <button id="see-more-btn" class="text-blue-600 hover:underline mt-2">See More</button>
-                  <button id="see-less-btn" class="text-blue-600 hover:underline mt-2 hidden">Show Less</button>
+                  <button id="see-more-btn" class="text-blue-600 hover:underline mt-2">Lihat Lainnya</button>
+                  <button id="see-less-btn" class="text-blue-600 hover:underline mt-2 hidden">Sembunyikan</button>
                 @endif
               </div>
 

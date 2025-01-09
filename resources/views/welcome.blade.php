@@ -381,15 +381,15 @@
         </div>
     </div>
 </section>
-<div class="container mx-auto px-6 py-12">
+<div class="container mx-auto px-6 py-12" >
     <div class="flex justify-between items-center mb-8">
-        <h1 class="text-3xl font-bold">Most Popular Posts</h1>
-        <a href="/blog" class="text-blue-500 hover:underline">Lihat Lainnya</a>
+        <h1 class="text-3xl font-bold" data-aos="fade-right">Most Popular Posts</h1>
+        <a href="/blog" class="text-blue-500 hover:underline" data-aos="fade-left">Lihat Lainnya</a>
     </div>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
     @foreach ($popularPosts as $popularPost)
       <!-- Blog Post 1 -->
-      <article class="bg-white rounded-lg overflow-hidden shadow-lg dark:bg-gray-900 dark:text-gray-100 border dark:border-gray-700  hover:border-blue-500 dark:hover:border-gray-300 ">
+      <article class="bg-white rounded-lg overflow-hidden shadow-lg dark:bg-gray-900 dark:text-gray-100 border dark:border-gray-700  hover:border-blue-500 dark:hover:border-gray-300 " data-aos="zoom-in">
         {{-- <a href="{{ route('blog.show', $post->slug) }}"> --}}
           <div class="relative h-48">
             <img src="{{ asset('storage/' . $popularPost->thumbnail) }}" alt="Phoenix illustration" class="object-cover w-full h-full">

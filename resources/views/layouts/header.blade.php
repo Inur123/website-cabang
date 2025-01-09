@@ -2,12 +2,16 @@
 class="flex items-center justify-between px-6 py-4 border-b dark:border-gray-700 sticky top-0 z-10 bg-white dark:bg-gray-800">
 <div class="flex items-center space-x-2">
     <!-- Logo tampil di mobile dan desktop -->
-    <div class="p-2 rounded-lg">
-        <img src="{{ asset('template/images/logo-2.svg') }}" alt="" class="w-10 h-10 filter invert dark:invert-0">
-    </div>
+    <a href="/">
+        <div class="p-2 rounded-lg">
+          <img src="{{ asset('template/images/logo-2.svg') }}" alt="" class="w-10 h-10 filter invert dark:invert-0">
+        </div>
+      </a>
 
     <!-- Teks hanya tampil di desktop -->
-    <span class="text-xl font-bold hidden md:block">Ipnu Ippnu</span>
+    <a href="/">
+        <span class="text-xl font-bold hidden md:block">Ipnu Ippnu</span>
+      </a>
 </div>
 <!-- Menu Links (hidden on mobile, shown on larger screens) -->
 <div id="menu"
